@@ -6,13 +6,16 @@ if (!RedactorPlugins) var RedactorPlugins = {};
         return {
             init: function() {
                 $opts = this.opts.uploadcare;
-                if (!this.opts.uploadcare.crop) {
-                    this.opts.uploadcare.crop = '';
+                // defaults
+                if (! $opts.crop) {
+                    $opts.crop = '';
+                }
+                if (! $opts.version) {
+                    $opts.version = '2.0.4';
                 }
 
                 if (typeof uploadcare === 'undefined') {
-                    var version = this.opts.uploadcare.version || '2.0.4';
-                    var widget_url = 'https://ucarecdn.com/widget/' + version + '/uploadcare/uploadcare.min.js';
+                    var widget_url = 'https://ucarecdn.com/widget/' + $opts.version + '/uploadcare/uploadcare.min.js';
                     $.getScript(widget_url);
                 }
                 var button = this.button.add('uploadcare', 'Uploadcare');
