@@ -1,0 +1,27 @@
+<html>
+<head>
+    <link rel="stylesheet" href="redactor.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="uploadcare.js"></script>
+    <script src="redactor.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#content').redactor({
+                plugins: ['uploadcare'],
+                uploadcare: {
+                    // see https://uploadcare.com/documentation/widget/#configuration
+                    publicKey: 'demopublickey',
+                    crop: '4:3',
+                    tabs: 'file url instagram',
+                    multiple: true
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
