@@ -8,20 +8,19 @@
     <script src="redactor.js"></script>
     <script type="text/javascript">
         $(function() {
-            $('#content').redactor({
+            $('#redactor').redactor({
                 plugins: ['uploadcare'],
                 uploadcare: {
                     // see https://uploadcare.com/documentation/widget/#configuration
                     publicKey: 'demopublickey',
-                    crop: '4:3',
-                    tabs: 'file url instagram',
-                    multiple: true
+                    crop: 'free',
+                    tabs: 'file url instagram'
                 }
             });
         });
     </script>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="redactor"></div>
 </body>
 </html>
