@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.0.0)
+ * Uploadcare Redactor plugin (1.0.1)
  */
 
 if (!RedactorPlugins) var RedactorPlugins = {};
@@ -15,7 +15,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                     $opts.crop = '';
                 }
                 if (! $opts.version) {
-                    $opts.version = '2.0.6';
+                    $opts.version = '2.1.0';
                 }
 
                 if (typeof uploadcare === 'undefined') {
