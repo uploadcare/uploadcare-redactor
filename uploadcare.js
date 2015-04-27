@@ -25,7 +25,8 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                 var button = this.button.add('uploadcare', 'Uploadcare');
                 this.button.addCallback(button, this.uploadcare.show);
 
-                // using Font Awesome, sets the default icon; for usage with Semantic UI, change second argument to desired icon class (e.g. 'attach icon')
+                // using Font Awesome, sets the default icon
+                // for usage with Semantic UI, change second argument to desired icon class (e.g. 'attach icon')
                 this.button.setAwesome('uploadcare', 'fa-picture-o');
             },
 
