@@ -40,18 +40,18 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                 var files = $opts.multiple ? data.files() : [data];
                 $.when.apply(null, files).done(function() {
                     $.each(arguments, function() {
-                        var imageUrl = this.cdnUrl;
-                        if (this.isImage && ! this.cdnUrlModifiers) {
-                            imageUrl += '-/preview/';
-                        }
-                        if (this.isImage) {
-                            $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
+                        if ($.isFunction($opts.uploadCompleteCallback)) {
+                            $opts.uploadCompleteCallback.call($this, this);
                         } else {
-                            $this.insert.html('<a href="' + this.cdnUrl + '">' + info.name + '"</a>', false);
-                        }
-
-                        if ($.isFunction($opts.uploadCallback)) {
-                            $opts.uploadCallback.call($this, this);
+                            var imageUrl = this.cdnUrl;
+                            if (this.isImage && ! this.cdnUrlModifiers) {
+                                imageUrl += '-/preview/';
+                            }
+                            if (this.isImage) {
+                                $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
+                            } else {
+                                $this.insert.html('<a href="' + this.cdnUrl + '">' + info.name + '"</a>', false);
+                            }
                         }
                   });
                 });
