@@ -22,7 +22,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                     var widget_url = 'https://ucarecdn.com/widget/' + $opts.version + '/uploadcare/uploadcare.min.js';
                     $.getScript(widget_url);
                 }
-                var button = this.button.add('uploadcare', $opts.buttonLabel || 'Uploadcare');
+                var button = this.button.add('uploadcare', 'Uploadcare');
                 this.button.addCallback(button, this.uploadcare.show);
 
                 // using Font Awesome, sets the default icon
@@ -48,10 +48,6 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                             $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
                         } else {
                             $this.insert.html('<a href="' + this.cdnUrl + '">' + info.name + '"</a>', false);
-                        }
-
-                        if ($.isFunction($opts.uploadCallback)) {
-                            $opts.uploadCallback.call($this, this);
                         }
                   });
                 });
