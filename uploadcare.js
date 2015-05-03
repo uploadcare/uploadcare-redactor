@@ -22,7 +22,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                     var widget_url = 'https://ucarecdn.com/widget/' + $opts.version + '/uploadcare/uploadcare.min.js';
                     $.getScript(widget_url);
                 }
-                var button = this.button.add('uploadcare', 'Uploadcare');
+                var button = this.button.add('uploadcare', $opts.buttonLabel || 'Uploadcare');
                 this.button.addCallback(button, this.uploadcare.show);
 
                 // using Font Awesome, sets the default icon
@@ -40,14 +40,18 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                 var files = $opts.multiple ? data.files() : [data];
                 $.when.apply(null, files).done(function() {
                     $.each(arguments, function() {
-                        var imageUrl = this.cdnUrl;
-                        if (this.isImage && ! this.cdnUrlModifiers) {
-                            imageUrl += '-/preview/';
-                        }
-                        if (this.isImage) {
-                            $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
+                        if ($.isFunction($opts.uploadCompleteCallback)) {
+                            $opts.uploadCompleteCallback.call($this, this);
                         } else {
-                            $this.insert.html('<a href="' + this.cdnUrl + '">' + info.name + '"</a>', false);
+                            var imageUrl = this.cdnUrl;
+                            if (this.isImage && ! this.cdnUrlModifiers) {
+                                imageUrl += '-/preview/';
+                            }
+                            if (this.isImage) {
+                                $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
+                            } else {
+                                $this.insert.html('<a href="' + this.cdnUrl + '">' + info.name + '"</a>', false);
+                            }
                         }
                   });
                 });
