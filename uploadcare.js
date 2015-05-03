@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.0.1)
+ * Uploadcare Redactor plugin (1.1.0)
  */
 
 if (!RedactorPlugins) var RedactorPlugins = {};
