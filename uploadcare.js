@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.1.0)
+ * Uploadcare Redactor plugin (1.0.1)
  */
 
 if (!RedactorPlugins) var RedactorPlugins = {};
@@ -32,12 +32,14 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 
             show: function() {
                 var dialog = uploadcare.openDialog({}, $opts);
+                this.selection.save();
                 dialog.done(this.uploadcare.done)
             },
 
             done: function(data) {
                 var $this = this;
                 var files = $opts.multiple ? data.files() : [data];
+                this.selection.restore();
                 $.when.apply(null, files).done(function() {
                     $.each(arguments, function() {
                         if ($.isFunction($opts.uploadCompleteCallback)) {
