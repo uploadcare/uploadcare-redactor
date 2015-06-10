@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.1.1)
+ * Uploadcare Redactor plugin (1.1.2)
  */
 
 if (!RedactorPlugins) var RedactorPlugins = {};
@@ -15,7 +15,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                     $opts.crop = '';
                 }
                 if (! $opts.version) {
-                    $opts.version = '2.1.0';
+                    $opts.version = '2.3.1';
                 }
 
                 if (typeof uploadcare === 'undefined') {
@@ -52,7 +52,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
                             if (this.isImage) {
                                 $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
                             } else {
-                                $this.insert.html('<a href="' + this.cdnUrl + '">' + info.name + '"</a>', false);
+                                $this.insert.html('<a href="' + this.cdnUrl + '">' + this.name + '</a>', false);
                             }
                         }
                   });
