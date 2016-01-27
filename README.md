@@ -158,6 +158,11 @@ A full list of tabs supported in the latest widget version
     <td><a href="http://vk.com/">VK</a></td>
     <th>Off</th>
   </tr>
+  <tr>
+    <td><code>Huddle</code></td>
+    <td><a href="http://huddle.com/">Huddle</a></td>
+    <th>Off</th>
+  </tr>
 </table>
 
 The set can be reconfigured by
