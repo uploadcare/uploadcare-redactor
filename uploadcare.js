@@ -13,7 +13,7 @@
                     $opts.crop = '';
                 }
                 if (!$opts.version) {
-                    $opts.version = '2.6.0';
+                    $opts.version = '2.8.2';
                 }
 
                 if (typeof uploadcare === 'undefined') {
