@@ -10,10 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/TimonVS/uploadcare-redactor.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Uploadcare",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TimonVS/uploadcare-redactor/issues"
+    "url": "https://github.com/uploadcare/uploadcare-redactor/issues"
   },
-  "homepage": "https://github.com/TimonVS/uploadcare-redactor#readme"
+  "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme"
 }
