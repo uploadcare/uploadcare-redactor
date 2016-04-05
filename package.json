@@ -1,0 +1,19 @@
+{
+  "name": "uploadcare-redactor",
+  "version": "1.0.0",
+  "description": "This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow your users to upload files and images from local device, social networks, cloud storages without any backend code that is usually required to handle uploads.",
+  "main": "uploadcare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimonVS/uploadcare-redactor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimonVS/uploadcare-redactor/issues"
+  },
+  "homepage": "https://github.com/TimonVS/uploadcare-redactor#readme"
+}
