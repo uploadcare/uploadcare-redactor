@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.3.0)
+ * Uploadcare Redactor plugin (1.4.0)
  */
 
 (function($) {
@@ -20,9 +20,14 @@
                     var widget_url = 'https://ucarecdn.com/widget/' + $opts.version + '/uploadcare/uploadcare.min.js';
                     $.getScript(widget_url);
                 }
-                var button = this.button.add('uploadcare', $opts.buttonLabel || 'Uploadcare');
+                
+                var button = $opts.buttonBefore
+                    ? this.button.addBefore($opts.buttonBefore, 'uploadcare', $opts.buttonLabel || 'Uploadcare')
+                    : this.button.add('uploadcare', $opts.buttonLabel || 'Uploadcare');
+
                 this.button.addCallback(button, this.uploadcare.show);
-                this.button.setIcon(button, '<i class="fa fa-picture-o"></i>');
+
+                if ($opts.buttonIconEnabled) this.button.setIcon(button, '<i class="fa fa-picture-o"></i>');
             },
 
             show: function() {
