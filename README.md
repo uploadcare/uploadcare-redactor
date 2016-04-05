@@ -28,11 +28,11 @@ settings] you may want:
                     // styling options
                     buttonLabel: 'Image / file'
                     buttonBefore: 'video',
-                    buttonIconEnabled: true
+                    buttonIconEnabled: true,
                     // uploadcare widget options, see https://uploadcare.com/documentation/widget/#configuration
                     publicKey: 'demopublickey', // set your API key
                     crop: 'free',
-                    tabs: 'all',
+                    tabs: 'all'
                 }
             });
         });
