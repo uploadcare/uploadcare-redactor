@@ -27,7 +27,9 @@
 
                 this.button.addCallback(button, this.uploadcare.show);
 
-                if ($opts.buttonIconEnabled) this.button.setIcon(button, '<i class="fa fa-picture-o"></i>');
+                if ($opts.buttonIconEnabled) {
+                    this.button.setIcon(button, '<i class="fa fa-picture-o"></i>');
+                }
             },
 
             show: function() {
