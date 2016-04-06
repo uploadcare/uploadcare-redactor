@@ -25,7 +25,11 @@ settings] you may want:
             $('#redactor').redactor({
                 plugins: ['uploadcare'],
                 uploadcare: {
-                    // see https://uploadcare.com/documentation/widget/#configuration
+                    // styling options
+                    buttonLabel: 'Image / file'
+                    buttonBefore: 'video',
+                    buttonIconEnabled: true,
+                    // uploadcare widget options, see https://uploadcare.com/documentation/widget/#configuration
                     publicKey: 'demopublickey', // set your API key
                     crop: 'free',
                     tabs: 'all'
