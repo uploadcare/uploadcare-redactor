@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.0
+
+- add `iconButtonEnabled` option to enable/disable button icon
+- add `buttonBefore` option to configure the position of the button in the toolbar
+
 ## 1.3.0
 
 - add package.json
