@@ -4,6 +4,7 @@
 
 - add `iconButtonEnabled` option to enable/disable button icon
 - add `buttonBefore` option to configure the position of the button in the toolbar
+- add `buttonLabel` option to configure button label
 
 ## 1.3.0
 
