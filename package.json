@@ -1,6 +1,6 @@
 {
   "name": "uploadcare-redactor",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow your users to upload files and images from local device, social networks, cloud storages without any backend code that is usually required to handle uploads.",
   "main": "uploadcare.js",
   "scripts": {
