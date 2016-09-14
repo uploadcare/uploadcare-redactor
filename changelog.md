@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+
+- update widget version to 2.10.0 (see [widget changelog][widget changelog])
+
 ## 1.4.0
 
 - add `iconButtonEnabled` option to enable/disable button icon
