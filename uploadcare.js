@@ -16,6 +16,11 @@
                     $opts.version = '2.10.0';
                 }
 
+                // Use imageTag from redactor config
+                if (this.opts.imageTag) {
+                    $opts.imageTag = this.opts.imageTag;
+                }
+
                 if (typeof uploadcare === 'undefined') {
                     var widget_url = 'https://ucarecdn.com/widget/' + $opts.version + '/uploadcare/uploadcare.min.js';
                     $.getScript(widget_url);
@@ -52,7 +57,9 @@
                                 imageUrl += '-/preview/';
                             }
                             if (this.isImage) {
-                                $this.insert.html('<img src="' + imageUrl + '" alt="' + this.name + '" />', false);
+                                var openTag = $opts.imageTag ? '<' + $opts.imageTag + '>' : '';
+                                var closeTag = $opts.imageTag ? '</' + $opts.imageTag + '>' : '';
+                                $this.insert.html(openTag + '<img src="' + imageUrl + '" alt="' + this.name + '" />' + closeTag, false);
                             } else {
                                 $this.insert.html('<a href="' + this.cdnUrl + '">' + this.name + '</a>', false);
                             }
