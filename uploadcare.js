@@ -13,7 +13,7 @@
                     $opts.crop = '';
                 }
                 if (!$opts.version) {
-                    $opts.version = '2.10.0';
+                    $opts.version = '2.10.1';
                 }
 
                 // Use imageTag from redactor config
