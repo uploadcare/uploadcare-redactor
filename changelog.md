@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.1
+
+- update widget version to 2.10.2 (see [widget changelog][widget changelog])
+
 ## 1.5.0
 
 - fix behavior of image insertion and wrap them in $opts.imageTag
