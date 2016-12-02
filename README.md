@@ -128,6 +128,11 @@ A full list of tabs supported in the latest widget version
     <th>On</th>
   </tr>
   <tr>
+    <td><code>gphotos</code></td>
+    <td><a href="https://photos.google.com/">Google Photos</a></td>
+    <th>On</th>
+  </tr>
+  <tr>
     <td><code>dropbox</code></td>
     <td><a href="https://www.dropbox.com/">Dropbox</a></td>
     <th>On</th>

@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.5.0)
+ * Uploadcare Redactor plugin (1.5.1)
  */
 
 (function($) {
@@ -13,7 +13,7 @@
                     $opts.crop = '';
                 }
                 if (!$opts.version) {
-                    $opts.version = '2.10.1';
+                    $opts.version = '2.10.2';
                 }
 
                 // Use imageTag from redactor config
