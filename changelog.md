@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.2
+
+- update CDN link to the widget
+
 ## 1.5.1
 
 - update widget version to 2.10.2 (see [widget changelog][widget changelog])
