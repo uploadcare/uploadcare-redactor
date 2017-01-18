@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.5.1)
+ * Uploadcare Redactor plugin (1.5.2)
  */
 
 (function($) {
@@ -13,7 +13,7 @@
                     $opts.crop = '';
                 }
                 if (!$opts.version) {
-                    $opts.version = '2.10.2';
+                    $opts.version = '2.x';
                 }
 
                 // Use imageTag from redactor config
@@ -22,7 +22,7 @@
                 }
 
                 if (typeof uploadcare === 'undefined') {
-                    var widget_url = 'https://ucarecdn.com/widget/' + $opts.version + '/uploadcare/uploadcare.min.js';
+                    var widget_url = 'https://ucarecdn.com/libs/widget/' + $opts.version + '/uploadcare.min.js';
                     $.getScript(widget_url);
                 }
                 
