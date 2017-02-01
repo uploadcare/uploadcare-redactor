@@ -1,14 +1,16 @@
 # Redactor Uploadcare plugin
 
-This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow
-your users to upload files and images from local device, social networks, cloud
-storages without any backend code that is usually required to handle uploads.
+That's the [Uploadcare][uc_website] plugin for the [Imperavi Redactor][redactor]
+text editor. The plugin allows your users to upload files and images
+from local devices, social networks, cloud storages, and more.
+All that — without any backend code that is often required for uploads.
 
+## Installation
 
-## Installation & configuration
+It'll take you just about three steps to install the plugin.
 
-1. Copy `uploadcare.js` to your plugins folder
-2. Include plugin code on the page with Redactor:
+1. Copy `uploadcare.js` to your plugins folderю
+2. Add this code to a page where you use Redactor:
 
     ```html
     <script src="/js/redactor/redactor.js"></script>
@@ -16,8 +18,8 @@ storages without any backend code that is usually required to handle uploads.
     <script src="/js/redactor/plugins/uploadcare.js"></script>
     ```
 
-3. Enable plugin for Redactor instance providing any Uploadcare [widget
-settings] you may want:
+3. Enable the plugin for a Redactor instance and provide
+   it with any Uploadcare Widget [settings][uc_widg_set]:
 
     ```html
     <script type="text/javascript">
@@ -39,17 +41,22 @@ settings] you may want:
     </script>
     ```
 
-## Required setting
+## Configuration
 
-There is only one - your public API key. You can get that by creating an
-account [Uploadcare]. You can use demo public key during dev stage, but note that
-demo account files are removed every few hours.
+### Required settings
 
+In fact, there's only one required setting — your public API key. In order to get the key
+you should register with Uploadcare and set up a project to store your files and settings.
+Check out our [knowledgebase][kb_intro] to get up an running with your Uploadcare account
+in minutes. You can always use our demo public key during your dev stage. But keep in mind,
+files uploaded to the demo account are removed every few hours.
 
-## Useful settings
+### Useful settings
 
-### Locale.
-Set widget locale. Should be set as global variable:
+**Locale**
+
+Use this setting to define a widget locale.
+Should be set as a global variable:
 
 ```html
 <script>
@@ -57,22 +64,35 @@ Set widget locale. Should be set as global variable:
 </script>
 ```
 
-### Crop.
-You can enable custom crop in the widget. After a user selects a file she will
-be able to crop it, according to your settings. Original file will be uploaded
-to your project, but additional crop operations will be included in resulting
-image URL.
+**Crop**
 
-Crop options is a string with one or more crop presets. Presets are divided by
-commas. When more than one preset is defined, user can pick any of them on crop
-step. Each preset consists of a size definition and optional keyword.
+This setting is applicable to images and
+enables custom crop for the plugin.
+Cropping will then become available after a user
+selects a file for upload.
+Please note that the file uploaded to your project
+still is an original image. Crop operations are performed
+on-the-fly with our 
+[CDN API](https://uploadcare.com/documentation/cdn/)
+and hence are included in a resulting image URL.
 
-- "disabled" — crop is disabled. Can't be combined with other presets;
-- "" or "free" — crop enabled and the user will be able to select any area on an image;
-- "2:3" — user will be able to select an area with aspect ratio 2:3;
-- "300x200" — same as previous, but if the selected area is bigger than 300x200, it will be scaled down to these dimensions;
-- "300x200 upscale" — same as previous, but the selected area will be scaled even if it is smaller than the specified size;
-- "300x200 minimum" — user will not be able to select an area smaller than 300x200. If uploaded image is smaller than 300x200 itself, it will be upscaled.
+Crop options are set in a string holding one or more
+crop presets. Those are divided by commas.
+If there are multiple crop presets present in an options
+string, users will then be able to choose which of
+them to apply during the crop step.
+Each preset consists of a size definition and an optional keyword.
+
+- "disabled" — crop is disabled. Can't be combined with other presets.
+- "" or "free" — crop is enabled and users will be able to
+  define crop area freely on an image.
+- "2:3" — enables crop with the 2:3 aspect ratio.
+- "300x200" — same as above, but if the selected area is bigger than 300x200 px,
+  it will be downscaled to fit these dimensions.
+- "300x200 upscale" — same as above, but if the selected area is smaller than
+  300x200 px, it will be upscaled to the specified size.
+- "300x200 minimum" — users won't be able to select an area smaller than 300x200 px.
+  If an uploaded image is smaller than that, it will be upscaled.
 
 ```html
 <script type="text/javascript">
@@ -88,13 +108,15 @@ step. Each preset consists of a size definition and optional keyword.
 </script>
 ```
 
-### Tabs (Upload Sources)
+**Tabs (Upload Sources)**
 
-The widget can upload files from disk, URLs, and many social sites.
-Each upload source has its own tab in the widget dialog.
+The widget can upload files from disks, URLs, social media,
+and many other sources. There's a separate tab for each
+upload source in the widget.
 
-A full list of tabs supported in the latest widget version
-(2.0.6) is provided below.
+Here's the full list of tabs (sources) supported by
+the latest widget version.
+
 
 <table class="reference">
   <tr>
@@ -174,9 +196,10 @@ A full list of tabs supported in the latest widget version
   </tr>
 </table>
 
-The set can be reconfigured by
-specifying the ones you need in a space-separated value.
-Special value `all` can be used to enable all supported sources.
+The set of enabled sources can be reconfigured.
+This is done through specifying their respective 
+codes in an options string, as space-separated values.
+Use the `all` value to enable all supported sources.
 
 ```html
 <script type="text/javascript">
@@ -193,13 +216,30 @@ Special value `all` can be used to enable all supported sources.
 ```
 
 
-## Other settings
+### Other settings
 
-All Uploadcare widget settings are too numerous to be listed here, please read
-Uploadcare [widget documentation] to unleash full uploading power.
+All the Uploadcare Widget settings can be found in our [docs][uc_widg_docs].
+Please read those to unleash the uploading power in its full.
 
+## Contributors
 
-[Imperavi Redactor]: http://imperavi.com/redactor/
-[widget settings]: https://uploadcare.com/documentation/widget/#configuration
-[widget documentation]: https://uploadcare.com/documentation/widget/
-[Uploadcare]: https://uploadcare.com
+- [@dmitry-mukhin](https://github.com/dmitry-mukhin)
+- [@TimonVS](https://github.com/TimonVS)
+- [@jpirkey](https://github.com/jpirkey)
+- [@Zmoki](https://github.com/Zmoki)
+
+## Security issues
+
+If you think you ran into something in Uploadcare libraries
+which might have security implications, please hit us up at
+[bugbounty@uploadcare.com](mailto:bugbounty@uploadcare.com)
+or Hackerone.
+
+We'll contact you personally in a short time to fix an issue
+through co-op and prior to any public disclosure.
+
+[kb_intro]: http://kb.uploadcare.com/article/234-uc-project-and-account
+[redactor]: http://imperavi.com/redactor/
+[uc_widg_set]: https://uploadcare.com/documentation/widget/#configuration
+[uc_widg_docs]: https://uploadcare.com/documentation/widget/
+[uc_website]: https://uploadcare.com

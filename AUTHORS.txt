@@ -1,7 +1,9 @@
 # git log --format='%aN <%aE>' | sort -u
 
+Andy Abgottspon <pp33pp22@gmx.ch>
 Dmitry Mukhin <dm@uploadcare.com>
+Elijah <ilya@uploadcare.com>
 Jason Pirkey <jason@pirkplace.com>
 Tim Kleier <tim.kleier@elic.org>
 Timon van Spronsen <timonvanspronsen@outlook.com>
-Andy Abgottspon <andy.abgottspon@hazu.io>
+Zarema Khalilova <zarema@uploadcare.com>
