@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.3
+
+- support Redactor callbacks: uploadcareShow, uploadcareDone, uploadcareCancel
+- compatibility with latest Redactor 2 toolbar icons (default)
+- new setting: buttonIcon - use 'fa fa-picture-o' for backwards compatibility
+- restore editor selection on cancel
+
 ## 1.5.2
 
 - update CDN link to the widget
