@@ -1,5 +1,6 @@
 /*
  * Uploadcare Redactor plugin (1.5.2)
+ *
  */
 
 (function($) {
@@ -7,7 +8,7 @@
         var $opts;
         return {
             init: function() {
-                $opts = this.opts.uploadcare;
+                $opts = $.extend({}, this.opts.uploadcare);
                 // defaults
                 if (!$opts.crop) {
                     $opts.crop = '';
@@ -33,14 +34,20 @@
                 this.button.addCallback(button, this.uploadcare.show);
 
                 if ($opts.buttonIconEnabled) {
-                    this.button.setIcon(button, '<i class="fa fa-picture-o"></i>');
+                    this.button.setIcon(button, '<i class="' + ($opts.buttonIcon ? $opts.buttonIcon : 're-icon-file') + '"></i>');
                 }
             },
 
             show: function() {
+                var $this = this;
                 var dialog = uploadcare.openDialog({}, $opts);
+                this.core.callback('uploadcareShow', dialog, $opts);
                 this.selection.save();
-                dialog.done(this.uploadcare.done)
+                dialog.fail(function() {
+                    $this.selection.restore();
+                    $this.core.callback('uploadcareCancel', Array.prototype.slice.call(arguments));
+                });
+                dialog.done(this.uploadcare.done);
             },
 
             done: function(data) {
@@ -48,7 +55,9 @@
                 var files = $opts.multiple ? data.files() : [data];
                 this.selection.restore();
                 $.when.apply(null, files).done(function() {
-                    $.each(arguments, function() {
+                    var resolvedFiles = Array.prototype.slice.call(arguments);
+                    $this.core.callback('uploadcareDone', resolvedFiles);
+                    $.each(resolvedFiles, function() {
                         if ($.isFunction($opts.uploadCompleteCallback)) {
                             $opts.uploadCompleteCallback.call($this, this);
                         } else {
