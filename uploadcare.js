@@ -73,6 +73,7 @@
                             }
                         }
                     });
+                    $this.storage.observe(); // Trigger storage tracking
                     $this.core.callback('uploadcareDone', resolvedFiles);
                 });
             },
