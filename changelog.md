@@ -6,6 +6,7 @@
 - compatibility with latest Redactor 2 toolbar icons (default)
 - new setting: buttonIcon - use 'fa fa-picture-o' for backwards compatibility
 - restore editor selection on cancel
+- assign data-image and data-file attributes for Redactor storage management
 
 ## 1.5.2
 

@@ -56,7 +56,6 @@
                 this.selection.restore();
                 $.when.apply(null, files).done(function() {
                     var resolvedFiles = Array.prototype.slice.call(arguments);
-                    $this.core.callback('uploadcareDone', resolvedFiles);
                     $.each(resolvedFiles, function() {
                         if ($.isFunction($opts.uploadCompleteCallback)) {
                             $opts.uploadCompleteCallback.call($this, this);
@@ -68,12 +67,13 @@
                             if (this.isImage) {
                                 var openTag = $opts.imageTag ? '<' + $opts.imageTag + '>' : '';
                                 var closeTag = $opts.imageTag ? '</' + $opts.imageTag + '>' : '';
-                                $this.insert.html(openTag + '<img src="' + imageUrl + '" alt="' + this.name + '" />' + closeTag, false);
+                                $this.insert.html(openTag + '<img src="' + imageUrl + '" alt="' + this.name + '" data-image="' + this.uuid + '" />' + closeTag, false);
                             } else {
-                                $this.insert.html('<a href="' + this.cdnUrl + '">' + this.name + '</a>', false);
+                                $this.insert.html('<a href="' + this.cdnUrl + '" data-file="' + this.uuid + '">' + this.name + '</a>', false);
                             }
                         }
                     });
+                    $this.core.callback('uploadcareDone', resolvedFiles);
                 });
             },
         };
