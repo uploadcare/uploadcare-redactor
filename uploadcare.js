@@ -1,5 +1,5 @@
 /*
- * Uploadcare Redactor plugin (1.5.3)
+ * Uploadcare Redactor plugin (1.6.0)
  *
  */
 
