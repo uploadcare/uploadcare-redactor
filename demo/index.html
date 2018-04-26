@@ -1,0 +1,39 @@
+<html>
+<head>
+    <!-- copy redactor.css to directory or replace with /path/to/redactor.css -->
+    <link rel="stylesheet" href="redactor.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- copy redactor.js to directory or replace with /path/to/redactor.js -->
+    <script src="redactor.js"></script>
+
+    <!-- include uploadcare plugin -->
+    <script src="../uploadcare.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $R('#redactor', {
+                plugins: ['uploadcare'],
+                uploadcare: {
+                    // see https://uploadcare.com/documentation/widget/#configuration
+                    publicKey: 'demopublickey',
+                    crop: 'free',
+                    tabs: 'file url instagram',
+                    buttonIconEnabled: true
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="width: 70%; margin: auto; padding: 50px;">
+        <textarea id="redactor">
+        <h2>Hello and Welcome</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </textarea>
+    </div>
+</body>
+</html>
