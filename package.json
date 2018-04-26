@@ -5,7 +5,9 @@
   "main": "uploadcare.js",
   "scripts": {
     "dev": "serve",
-    "deploy": "gh-pages-deploy"
+    "deploy:demo": "gh-pages-deploy",
+    "deploy:release": "branch-release",
+    "build-dist": "mkdir dist && cp uploadcare.js dist/uploadcare.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   },
   "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
   "devDependencies": {
+    "branch-release": "^1.0.3",
     "gh-pages-deploy": "^0.4.2",
     "rimraf": "^2.6.2",
     "serve": "^6.5.6"
