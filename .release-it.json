@@ -1,0 +1,15 @@
+{
+  "src": {
+    "tagName": "v%s",
+    "afterReleaseCommand": "npm run deploy:demo && npm run deploy:release"
+  },
+  "buildCommand": "npm run build",
+  "github": {
+    "release": true,
+    "draft": true,
+    "assets": "dist/*.*"
+  },
+  "npm": {
+    "publish": false
+  }
+}

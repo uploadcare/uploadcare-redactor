@@ -4,7 +4,12 @@
   "description": "This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow your users to upload files and images from local device, social networks, cloud storages without any backend code that is usually required to handle uploads.",
   "main": "uploadcare.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "rollup -c -w",
+    "serve": "serve",
+    "release": "release-it",
+    "deploy:demo": "node scripts/deploy-demo.js",
+    "deploy:release": "node scripts/deploy-release.js",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/uploadcare/uploadcare-redactor/issues"
   },
-  "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme"
+  "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
+  "devDependencies": {
+    "gh-pages": "^1.1.0",
+    "release-it": "^7.4.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-jscc": "^0.3.3",
+    "rollup-plugin-license": "^0.6.0",
+    "serve": "^6.5.6"
+  }
 }
