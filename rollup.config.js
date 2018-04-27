@@ -1,13 +1,12 @@
 import jscc from 'rollup-plugin-jscc'
 import license from 'rollup-plugin-license'
-
-const widgetVersion = '3.x'
+import pkg from './package.json'
 
 const getPlugins = redactorVer => [
   jscc({
     values: {
       _REDACTOR_TARGET: redactorVer,
-      _WIDGET_VERSION: widgetVersion,
+      _WIDGET_VERSION: pkg.widgetVersion,
     },
   }),
   license({
