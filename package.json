@@ -35,6 +35,7 @@
     "rollup": "^0.58.2",
     "rollup-plugin-jscc": "^0.3.3",
     "rollup-plugin-license": "^0.6.0",
+    "rollup-plugin-uglify": "^3.0.0",
     "serve": "^6.5.6"
   }
 }
