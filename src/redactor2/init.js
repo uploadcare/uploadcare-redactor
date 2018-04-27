@@ -1,11 +1,11 @@
-import loadWidget from "../loadWidget";
-import parseOptions from "../parseOptions";
+import loadWidget from '../loadWidget'
+import parseOptions from '../parseOptions'
 
 export default function() {
-  this.redactorOpts = this.opts;
+  this.redactorOpts = this.opts
 
-  parseOptions.call(this);
-  loadWidget.call(this);
+  parseOptions.call(this)
+  loadWidget.call(this)
 
-  this.uploadcare.start();
+  this.uploadcare.start()
 }

@@ -1,8 +1,9 @@
 export default function getFileUrl(fileInfo) {
-  var fileUrl = fileInfo.cdnUrl;
+  var fileUrl = fileInfo.cdnUrl
+
   if (fileInfo.isImage && !fileInfo.cdnUrlModifiers) {
-    fileUrl += "-/preview/";
+    fileUrl += '-/preview/'
   }
 
-  return fileUrl;
+  return fileUrl
 }

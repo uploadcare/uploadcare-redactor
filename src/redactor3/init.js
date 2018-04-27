@@ -1,11 +1,11 @@
-import loadWidget from "../loadWidget";
-import parseOptions from "../parseOptions";
+import loadWidget from '../loadWidget'
+import parseOptions from '../parseOptions'
 
 export default function(app) {
-  this.app = app;
-  this.toolbar = app.toolbar;
-  this.redactorOpts = this.app.opts;
+  this.app = app
+  this.toolbar = app.toolbar
+  this.redactorOpts = this.app.opts
 
-  parseOptions.call(this);
-  loadWidget.call(this);
+  parseOptions.call(this)
+  loadWidget.call(this)
 }

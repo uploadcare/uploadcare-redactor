@@ -1,8 +1,8 @@
 export default {
   save: function() {
-    this.app.selection.save();
+    this.app.selection.save()
   },
   restore: function() {
-    this.app.selection.restore();
-  }
-};
+    this.app.selection.restore()
+  },
+}

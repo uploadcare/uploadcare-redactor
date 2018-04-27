@@ -1,3 +1,3 @@
 export default function broadcast(eventName) {
-  this.app.broadcast("uploadcareShow", Array.prototype.slice.call(arguments));
+  this.app.broadcast(eventName, Array.prototype.slice.call(arguments))
 }
