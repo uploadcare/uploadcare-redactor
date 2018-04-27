@@ -1,5 +1,6 @@
 import loadWidget from '../loadWidget'
 import parseOptions from '../parseOptions'
+import applyIntegrationSetting from '../applyIntegrationSetting'
 
 export default function(app) {
   this.app = app
@@ -8,4 +9,5 @@ export default function(app) {
 
   parseOptions.call(this)
   loadWidget.call(this)
+  applyIntegrationSetting.call(this)
 }
