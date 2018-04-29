@@ -1,18 +1,10 @@
 {
-  "extends": ["uploadcare", "plugin:es5/no-es2015"],
-  "plugins": ["es5"],
-  "env": {
-    "es6": true
+  "env": {"browser": true},
+  "parserOptions": {
+    "ecmaVersion": 5,
+    "sourceType": "module"
   },
   "rules": {
-    "require-jsdoc": "off",
-    "max-statements": "off",
-    "max-nested-callbacks": "off",
-    "es5/no-modules": "off",
-    "consistent-this": "off",
-    "spaced-comment": "off"
-  },
-  "parserOptions": {
-    "sourceType": "module"
+    "consistent-this": "off"
   }
 }
