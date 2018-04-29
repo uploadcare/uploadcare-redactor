@@ -7,8 +7,10 @@ const plugins = [
   jscc({values: {_WIDGET_VERSION: pkg.widgetVersion}}),
   license({
     banner: `
-      Uploadcare Redactor 2/3 plugin
-      Version: <%= pkg.version %>
+      <%= pkg.name %> <%= pkg.version %>
+      <%= pkg.description %>
+      <%= pkg.homepage %>
+      Date: <%= moment().format('YYYY-MM-DD') %>
     `,
   }),
 ]
