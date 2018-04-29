@@ -12,7 +12,8 @@
     "release": "release-it",
     "deploy:demo": "node scripts/deploy-demo.js",
     "deploy:release": "node scripts/deploy-release.js",
-    "build": "rollup -c"
+    "build": "npm run clean && rollup -c",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
