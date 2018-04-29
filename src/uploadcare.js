@@ -1,10 +1,12 @@
+import checkRedactor from './checkRedactor'
 import wrappers from './wrappers'
 import done from './common/done'
 import show from './common/show'
 
-wrappers.addPlugin({
-  init: wrappers.init,
-  start: wrappers.start,
-  show: show,
-  done: done,
-})
+checkRedactor() &&
+  wrappers.addPlugin({
+    init: wrappers.init,
+    start: wrappers.start,
+    show: show,
+    done: done,
+  })
