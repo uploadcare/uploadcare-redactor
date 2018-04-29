@@ -1,3 +1,5 @@
 export default function getVersion() {
-  return $.Redactor.VERSION
+  if (typeof $.Redactor !== undefined) {
+    return $.Redactor.VERSION
+  }
 }

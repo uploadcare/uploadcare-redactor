@@ -1,3 +1,5 @@
 export default function getVersion() {
-  return $R.version
+  if (typeof $R !== 'undefined') {
+    return $R.version
+  }
 }

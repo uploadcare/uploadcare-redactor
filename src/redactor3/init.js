@@ -1,13 +1,13 @@
-import loadWidget from '../loadWidget'
-import parseOptions from '../parseOptions'
-import applyIntegrationSetting from '../applyIntegrationSetting'
+import loadWidget from '../common/loadWidget'
+import normalizeOptions from '../common/normalizeOptions'
+import applyIntegrationSetting from '../common/applyIntegrationSetting'
 
 export default function(app) {
   this.app = app
   this.toolbar = app.toolbar
   this.redactorOpts = this.app.opts
 
-  parseOptions.call(this)
+  normalizeOptions.call(this)
   loadWidget.call(this)
   applyIntegrationSetting.call(this)
 }

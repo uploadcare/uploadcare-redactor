@@ -1,7 +1,8 @@
-import getRedactorVerstion from './redactor$_REDACTOR_TARGET/getVersion'
+import getRedactor3Version from '../redactor3/getVersion'
+import getRedactor2Version from '../redactor2/getVersion'
 
 export default function applyIntegrationSetting() {
-  var redactorVersion = getRedactorVerstion()
+  var redactorVersion = getRedactor3Version() || getRedactor2Version()
   var pluginVerion = '$_VERSION'
 
   this.ucOpts.integration = 'Redactor/{redactorVersion}; Uploadcare-Redactor/{pluginVerion}'

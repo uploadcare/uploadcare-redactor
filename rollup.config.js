@@ -3,16 +3,15 @@ import license from "rollup-plugin-license";
 import pkg from "./package.json";
 import uglify from "rollup-plugin-uglify";
 
-const getPlugins = redactorVer => [
+const plugins = [
   jscc({
     values: {
-      _REDACTOR_TARGET: redactorVer,
       _WIDGET_VERSION: pkg.widgetVersion
     }
   }),
   license({
     banner: `
-      Uploadcare Redactor ${redactorVer} plugin
+      Uploadcare Redactor 2/3 plugin
       Version: <%= pkg.version %>
     `
   })
@@ -21,33 +20,17 @@ const getPlugins = redactorVer => [
 export default [
   {
     input: "src/uploadcare.js",
-    plugins: getPlugins(3),
+    plugins: plugins,
     output: {
-      file: "dist/uploadcare.redactor3.js",
+      file: "dist/uploadcare.redactor.js",
       format: "iife"
     }
   },
   {
     input: "src/uploadcare.js",
-    plugins: [uglify(), ...getPlugins(3)],
+    plugins: [uglify(), ...plugins],
     output: {
-      file: "dist/uploadcare.redactor3.min.js",
-      format: "iife"
-    }
-  },
-  {
-    input: "src/uploadcare.js",
-    plugins: getPlugins(2),
-    output: {
-      file: "dist/uploadcare.redactor2.js",
-      format: "iife"
-    }
-  },
-  {
-    input: "src/uploadcare.js",
-    plugins: [uglify(), ...getPlugins(2)],
-    output: {
-      file: "dist/uploadcare.redactor2.min.js",
+      file: "dist/uploadcare.redactor.min.js",
       format: "iife"
     }
   }

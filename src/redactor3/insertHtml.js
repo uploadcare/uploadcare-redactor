@@ -1,4 +1,4 @@
-import getFileUrl from '../getFileUrl'
+import getFileUrl from '../common/getFileUrl'
 
 export default function insertHtml(plugin, fileInfo) {
   var fileUrl = getFileUrl(fileInfo)
