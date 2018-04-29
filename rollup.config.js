@@ -15,21 +15,32 @@ const plugins = [
   }),
 ]
 
+const globals = {
+  jQuery: 'jQuery',
+  Redactor: 'typeof Redactor !== \'undefined\' ? Redactor : undefined',
+}
+
+const external = ['jQuery', 'Redactor']
+
 export default [
   {
     input: 'src/uploadcare.js',
-    plugins: plugins,
+    plugins,
+    external,
     output: {
       file: 'dist/uploadcare.redactor.js',
       format: 'iife',
+      globals,
     },
   },
   {
     input: 'src/uploadcare.js',
     plugins: [uglify(), ...plugins],
+    external,
     output: {
       file: 'dist/uploadcare.redactor.min.js',
       format: 'iife',
+      globals,
     },
   },
 ]

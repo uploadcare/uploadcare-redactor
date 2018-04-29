@@ -1,3 +1,5 @@
+import $ from 'jQuery'
+
 export default function normalizeOptions() {
   this.ucOpts = $.extend({}, this.redactorOpts.uploadcare)
 

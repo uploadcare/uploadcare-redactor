@@ -1,3 +1,4 @@
+import $ from 'jQuery'
 import wrappers from '../wrappers'
 
 export default function done(data) {

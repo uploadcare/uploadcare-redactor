@@ -8,6 +8,7 @@
   "rules": {
     "require-jsdoc": "off",
     "max-statements": "off",
-    "max-nested-callbacks": "off"
+    "max-nested-callbacks": "off",
+    "id-length": "off"    
   }
 }
