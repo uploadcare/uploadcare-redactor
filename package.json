@@ -6,7 +6,7 @@
   "main": "uploadcare.js",
   "scripts": {
     "dev": "rollup -c -w",
-    "lint": "eslint ./src",
+    "lint": "eslint .",
     "precommit": "npm run lint",
     "serve": "serve",
     "release": "release-it",
