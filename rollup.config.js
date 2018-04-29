@@ -16,8 +16,8 @@ const plugins = [
 ]
 
 const globals = {
-  jQuery: 'jQuery',
-  Redactor: 'typeof Redactor !== \'undefined\' ? Redactor : undefined',
+  jQuery: 'window.jQuery',
+  Redactor: 'window.Redactor',
 }
 
 const external = ['jQuery', 'Redactor']
