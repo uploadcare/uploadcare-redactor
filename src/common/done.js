@@ -4,7 +4,7 @@ export default function done(data) {
   var $this = this
   var files = this.ucOpts.multiple ? data.files() : [data]
 
-  wrappers.selection.restore.call(this)
+  wrappers.getSelection.call(this).restore()
   $.when.apply(null, files).done(function() {
     var resolvedFiles = Array.prototype.slice.call(arguments)
 
