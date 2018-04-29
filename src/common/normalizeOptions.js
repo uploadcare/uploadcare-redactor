@@ -1,4 +1,4 @@
-export default function parseOptions() {
+export default function normalizeOptions() {
   this.ucOpts = $.extend({}, this.redactorOpts.uploadcare)
 
   // defaults
