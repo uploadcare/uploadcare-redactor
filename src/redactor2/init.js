@@ -1,6 +1,7 @@
 import loadWidget from '../common/loadWidget'
 import normalizeOptions from '../common/normalizeOptions'
 import applyIntegrationOption from '../common/applyIntegrationOption'
+import start from './start'
 
 export default function() {
   this.redactorOpts = this.opts
@@ -9,5 +10,5 @@ export default function() {
   loadWidget.call(this)
   applyIntegrationOption.call(this)
 
-  this.uploadcare.start()
+  start.call(this)
 }
