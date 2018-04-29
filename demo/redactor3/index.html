@@ -16,6 +16,11 @@
         $(function() {
             $R('#redactor', {
                 plugins: ['uploadcare'],
+                callbacks: {
+                    uploadcareShow: function() { console.log.apply(undefined, arguments) },
+                    uploadcareDone: function() { console.log.apply(undefined, arguments) },
+                    uploadcareCancel: function() { console.log.apply(undefined, arguments) },
+                },
                 uploadcare: {
                     // see https://uploadcare.com/docs/uploads/widget/#configuration
                     publicKey: 'demopublickey',
