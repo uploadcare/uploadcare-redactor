@@ -2,6 +2,9 @@ import jscc from 'rollup-plugin-jscc'
 import license from 'rollup-plugin-license'
 import pkg from './package.json'
 import uglify from 'rollup-plugin-uglify'
+import browsersync from 'rollup-plugin-browsersync'
+
+const isWatching = process.argv.includes('-w') || process.argv.includes('--watch')
 
 const plugins = [
   jscc({values: {_WIDGET_VERSION: pkg.widgetVersion}}),
@@ -13,6 +16,7 @@ const plugins = [
       Date: <%= moment().format('YYYY-MM-DD') %>
     `,
   }),
+  isWatching && browsersync(),
 ]
 
 const globals = {

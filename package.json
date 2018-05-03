@@ -8,7 +8,6 @@
     "dev": "rollup -c -w",
     "lint": "eslint .",
     "precommit": "npm run lint",
-    "serve": "serve",
     "release": "release-it",
     "deploy:demo": "node scripts/deploy-demo.js",
     "deploy:release": "node scripts/deploy-release.js",
@@ -33,9 +32,9 @@
     "release-it": "^7.4.2",
     "rimraf": "^2.6.2",
     "rollup": "^0.58.2",
+    "rollup-plugin-browsersync": "^0.2.6",
     "rollup-plugin-jscc": "^0.3.3",
     "rollup-plugin-license": "^0.6.0",
-    "rollup-plugin-uglify": "^3.0.0",
-    "serve": "^6.5.6"
+    "rollup-plugin-uglify": "^3.0.0"
   }
 }
