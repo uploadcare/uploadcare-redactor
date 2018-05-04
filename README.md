@@ -1,16 +1,24 @@
 # Redactor Uploadcare plugin
 
+<a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-ckeditor">
+    <img align="right" width="64" height="64"
+         src="https://ucarecdn.com/2f4864b7-ed0e-4411-965b-8148623aa680/uploadcare-logo-mark.svg"
+         alt="">
+</a>
+
 This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow
 your users to upload files and images from local device, social networks, cloud
 storages without any backend code that is usually required to handle uploads.
 
-[![Uploadcare stack on StackShare][stack-img]][stack]
+[![GitHub release][badge-release-img]][badge-release-url]&nbsp;
+[![Uploadcare stack on StackShare][badge-stack-img]][badge-stack-url]
 
 # Demo
 
-[Redactor 3 demo page][demo-redactor3]
+A minimalistic demo can be found here:
 
-[Redactor 2 demo page][demo-redactor2]
+ * [Redactor 3 demo page][demo-redactor3]
+ * [Redactor 2 demo page][demo-redactor2]
 
 ## Installation & configuration
 
@@ -217,5 +225,7 @@ Uploadcare [widget documentation] to unleash full uploading power.
 [releases]: https://github.com/uploadcare/uploadcare-redactor/releases
 [demo-redactor3]: https://uploadcare.github.io/uploadcare-redactor/#redactor3
 [demo-redactor2]: https://uploadcare.github.io/uploadcare-redactor/#redactor2
-[stack-img]: http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
-[stack]: https://stackshare.io/uploadcare/stacks/
+[badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
+[badge-stack-url]: https://stackshare.io/uploadcare/stacks/
+[badge-release-img]: https://img.shields.io/github/release/uploadcare/uploadcare-redactor.svg
+[badge-release-url]: https://github.com/uploadcare/uploadcare-redactor/releases
