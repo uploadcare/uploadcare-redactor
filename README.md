@@ -23,7 +23,10 @@ A minimalistic demo can be found here:
 ## Installation & configuration
 
 1. Copy the latest `uploadcare.redactor.js` from [GitHub Releases][releases] 
-to your plugins folder
+to your plugins folder. Or simply clone the release branch:
+
+    git clone -b release git@github.com:uploadcare/uploadcare-redactor.git plugins/uploadcare
+
 2. Include plugin code on the page with Redactor:
 
     ```html
