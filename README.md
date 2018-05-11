@@ -1,235 +1,114 @@
-# Redactor Uploadcare plugin
+# File Uploader by Uploadcare
 
-<a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-ckeditor">
+<a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-redactor">
     <img align="right" width="64" height="64"
          src="https://ucarecdn.com/2f4864b7-ed0e-4411-965b-8148623aa680/uploadcare-logo-mark.svg"
          alt="">
 </a>
 
-This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow
-your users to upload files and images from local device, social networks, cloud
-storages without any backend code that is usually required to handle uploads.
+This is a plugin for [Imperavi Redactor][redactor] to work with [Uploadcare Widget][uc-feature-widget].
 
 [![GitHub release][badge-release-img]][badge-release-url]&nbsp;
 [![Uploadcare stack on StackShare][badge-stack-img]][badge-stack-url]
 
-# Demo
+## Demo
 
 A minimalistic demo can be found here:
 
- * [Redactor 3 demo page][demo-redactor3]
- * [Redactor 2 demo page][demo-redactor2]
+* [with Redactor 3][demo-3]
+* [with Redactor 2][demo-2]
 
-## Installation & configuration
+## Requirements
 
-1. Copy the latest `uploadcare.redactor.js` from [GitHub Releases][releases] 
-to your plugins folder. Or simply clone the release branch:
+Imperavi Redactor 2 or 3.
 
-    ```
-    git clone -b release git@github.com:uploadcare/uploadcare-redactor.git plugins/uploadcare
-    ```
+## Install
 
-2. Include plugin code on the page with Redactor:
+Download the latest plugin archive from the [release branch][release-branch]
+or [releases page][releases-page].
 
-    ```html
-    <script src="/js/redactor/redactor.js"></script>
-     <!-- Plugin -->
-    <script src="/js/redactor/plugins/uploadcare.redactor.js"></script>
-    ```
+Extract the downloaded plugin into the plugins folder of your Redactor installation.
 
-3. Enable plugin for Redactor instance providing any Uploadcare [widget
-settings] you may want:
-
-    ```html
-    <script type="text/javascript">
-        $(function() {
-            $R('#redactor', {
-                plugins: ['uploadcare'],
-                uploadcare: {
-                    // styling options
-                    buttonLabel: 'Image / file'
-                    buttonBefore: 'video',
-                    buttonIconEnabled: true,
-                    // uploadcare widget options, see https://uploadcare.com/documentation/widget/#configuration
-                    publicKey: 'demopublickey', // set your API key
-                    crop: 'free',
-                    tabs: 'all'
-                }
-            });
-        });
-    </script>
-    ```
-
-## Required setting
-
-There is only one - your public API key. You can get that by creating an
-account [Uploadcare]. You can use demo public key during dev stage, but note that
-demo account files are removed every few hours.
-
-
-## Useful settings
-
-### Locale.
-Set widget locale. Should be set as global variable:
+Place the plugin after embedding `redactor.js`,
 
 ```html
-<script>
-    UPLOADCARE_LOCALE = 'es';
-</script>
+<!-- redactor js -->
+<script src="/your-folder/redactor.js"></script>
+
+<!-- plugin js -->
+<script src="/your-folder/plugins/uploadcare.redactor.min.js"></script>
 ```
 
-### Crop.
-You can enable custom crop in the widget. After a user selects a file she will
-be able to crop it, according to your settings. Original file will be uploaded
-to your project, but additional crop operations will be included in resulting
-image URL.
+## Usage
 
-Crop options is a string with one or more crop presets. Presets are divided by
-commas. When more than one preset is defined, user can pick any of them on crop
-step. Each preset consists of a size definition and optional keyword.
+Add `uploadcare` to your list of Redactor plugins.
+**Set your [public key][widget-docs-options-public-key]**.
 
-- "disabled" — crop is disabled. Can't be combined with other presets;
-- "" or "free" — crop enabled and the user will be able to select any area on an image;
-- "2:3" — user will be able to select an area with aspect ratio 2:3;
-- "300x200" — same as previous, but if the selected area is bigger than 300x200, it 
-will be scaled down to these dimensions;
-- "300x200 upscale" — same as previous, but the selected area will be scaled even if 
-it is smaller than the specified size;
-- "300x200 minimum" — user will not be able to select an area smaller than 300x200. 
-If uploaded image is smaller than 300x200 itself, it will be upscaled.
+With Redactor 3,
 
-```html
-<script type="text/javascript">
-    $(function() {
-        $R('#redactor', {
-            plugins: ['uploadcare'],
-            uploadcare: {
-                publicKey: 'yourapikey',
-                crop: '4:3, 3:4'
-            }
-        });
-    });
-</script>
+```javascript
+$R('#editor', {
+  plugins: ['uploadcare'],
+  uploadcare: {
+    buttonIconEnabled: true,
+    publicKey: 'YOUR_PUBLIC_KEY',
+  }
+})
 ```
 
-### Tabs (Upload Sources)
+With Redactor 2,
 
-The widget can upload files from disk, URLs, and many social sites.
-Each upload source has its own tab in the widget dialog.
-
-A full list of tabs supported in the latest widget version
-(2.0.6) is provided below.
-
-<table class="reference">
-  <tr>
-    <th>Code</th>
-    <th>File Source</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>file</code></td>
-    <td>Local disk</td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>camera</code></td>
-    <td>Local webcam</td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>url</code></td>
-    <td>Any URL</td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>facebook</code></td>
-    <td><a href="https://www.facebook.com/">Facebook</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>gdrive</code></td>
-    <td><a href="https://drive.google.com/">Google Drive</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>gphotos</code></td>
-    <td><a href="https://photos.google.com/">Google Photos</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>dropbox</code></td>
-    <td><a href="https://www.dropbox.com/">Dropbox</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>instagram</code></td>
-    <td><a href="http://instagram.com/">Instagram</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>evernote</code></td>
-    <td><a href="http://evernote.com/">Evernote</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>flickr</code></td>
-    <td><a href="https://www.flickr.com/">Flickr</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>skydrive</code></td>
-    <td><a href="https://onedrive.live.com/">OneDrive</a></td>
-    <th>On</th>
-  </tr>
-  <tr>
-    <td><code>box</code></td>
-    <td><a href="https://www.box.com/">Box</a></td>
-    <th>Off</th>
-  </tr>
-  <tr>
-    <td><code>vk</code></td>
-    <td><a href="http://vk.com/">VK</a></td>
-    <th>Off</th>
-  </tr>
-  <tr>
-    <td><code>Huddle</code></td>
-    <td><a href="http://huddle.com/">Huddle</a></td>
-    <th>Off</th>
-  </tr>
-</table>
-
-The set can be reconfigured by
-specifying the ones you need in a space-separated value.
-Special value `all` can be used to enable all supported sources.
-
-```html
-<script type="text/javascript">
-    $(function() {
-        $R('#redactor', {
-            plugins: ['uploadcare'],
-            uploadcare: {
-                publicKey: 'yourapikey',
-                tabs: 'file url instagram flickr'
-            }
-        });
-    });
-</script>
+```javascript
+$('#editor').redactor({
+  plugins: ['uploadcare'],
+  uploadcare: {
+    buttonIconEnabled: true,
+    publicKey: 'YOUR_PUBLIC_KEY',
+  }
+})
 ```
 
+## Configuration
 
-## Other settings
+Initialize a plugin with additional options:
 
-All Uploadcare widget settings are too numerous to be listed here, please read
-Uploadcare [widget documentation] to unleash full uploading power.
+```javascript
+UPLOADCARE_LOCALE = 'ru' /* set locale if you wish */
 
+$R('#editor', {
+  plugins: ['uploadcare'],
+  callbacks: {
+    uploadcareShow: function() { console.log.apply(undefined, arguments) },
+    uploadcareDone: function() { console.log.apply(undefined, arguments) },
+    uploadcareCancel: function() { console.log.apply(undefined, arguments) },
+  },
+  uploadcare: {
+    publicKey: 'demopublickey',
+    crop: 'free,1:1',
+    buttonIconEnabled: true, /* show icon instead of "Uploadcare" */
+  }
+})
+```
 
-[Imperavi Redactor]: http://imperavi.com/redactor/
-[widget settings]: https://uploadcare.com/docs/uploads/widget/config/
-[widget documentation]: https://uploadcare.com/docs/uploads/widget/
-[Uploadcare]: https://uploadcare.com
-[releases]: https://github.com/uploadcare/uploadcare-redactor/releases
-[demo-redactor3]: https://uploadcare.github.io/uploadcare-redactor/#redactor3
-[demo-redactor2]: https://uploadcare.github.io/uploadcare-redactor/#redactor2
+You can deeply customize the widget behavior:
+file sources, file validation, and much more.
+Please, check out the [Uploadcare Widget][widget-docs-config]
+and [JavaScript API][widget-docs-js-api] docs.
+
+## Feedback
+
+Your feedback or support requests are welcome at [hello@uploadcare.com][uc-email-hello].
+
+[uc-email-hello]: mailto:hello@uploadcare.com
+[demo-3]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor3/
+[demo-2]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor2/
+[uc-feature-widget]: https://uploadcare.com/features/widget/?utm_source=github&utm_campaign=uploadcare-ckeditor
+[widget-docs-config]: https://uploadcare.com/docs/uploads/widget/config/
+[widget-docs-js-api]: https://uploadcare.com/docs/api_reference/javascript/
+[widget-docs-options-public-key]: https://uploadcare.com/docs/uploads/widget/config/#option-public-key
+[releases-page]: https://github.com/uploadcare/uploadcare-ckeditor/releases
+[release-branch]: https://github.com/uploadcare/uploadcare-ckeditor/tree/release
+[redactor]: https://imperavi.com/redactor/
 [badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
 [badge-stack-url]: https://stackshare.io/uploadcare/stacks/
 [badge-release-img]: https://img.shields.io/github/release/uploadcare/uploadcare-redactor.svg
