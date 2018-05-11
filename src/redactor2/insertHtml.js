@@ -9,14 +9,14 @@ export default function insertHtml(plugin, fileInfo) {
 
     plugin.insert.html(
       openTag +
-        '<img src="' +
-        fileUrl +
-        '" alt="' +
-        fileInfo.name +
-        '" data-image="' +
-        fileInfo.uuid +
-        '" />' +
-        closeTag,
+      '<img src="' +
+      fileUrl +
+      '" alt="' +
+      fileInfo.name +
+      '" data-image="' +
+      fileInfo.uuid +
+      '" />' +
+      closeTag,
       false
     )
   }

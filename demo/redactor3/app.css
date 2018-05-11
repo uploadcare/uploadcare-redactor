@@ -1,7 +1,7 @@
 :root {
   --font-headings: "Montserrat", sans-serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-size: 16px;
   --line-height: 24px;
   --text-padding-bottom: 32px;
@@ -22,8 +22,8 @@
   --focus-color: rgba(82, 176, 255, 0.6);
   --animation-time: 150ms;
   --hover-transition: background-color var(--animation-time) ease,
-    color var(--animation-time) ease, border-color var(--animation-time) ease,
-    opacity var(--animation-time) ease;
+  color var(--animation-time) ease, border-color var(--animation-time) ease,
+  opacity var(--animation-time) ease;
 }
 
 @media (max-width: 767px) {
