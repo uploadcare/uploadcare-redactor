@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo of File Uploader by Uploadcare, Redactor Plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="fonts.css" />
+
+    <!-- copy redactor.css to directory or replace with /path/to/redactor.css -->
+    <link rel="stylesheet" href="redactor.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- copy redactor.js to directory or replace with /path/to/redactor.js -->
+    <script src="redactor.js"></script>
+
+    <!-- include uploadcare plugin -->
+    <script src="../../dist/uploadcare.redactor.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Demo&nbsp;of File Uploader by Uploadcare, Redactor plugin</h1>
+
+        <p>
+            <a href="https://github.com/uploadcare/uploadcare-redactor">Github repo</a>&nbsp;&nbsp;
+            <a href="https://github.com/uploadcare/uploadcare-redactor/releases">Releases</a>
+        </p>
+
+        <h2>Demo</h2>
+
+        <div style="margin: auto; padding-bottom: 50px;">
+            <textarea id="redactor">
+                <h2>Hello and Welcome</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </textarea>
+        </div>
+
+        <h2>Code</h2>
+
+        <pre><code>$R('#redactor', {
+    plugins: ['uploadcare'],
+    callbacks: {
+        uploadcareShow: function() { console.log.apply(undefined, arguments) },
+        uploadcareDone: function() { console.log.apply(undefined, arguments) },
+        uploadcareCancel: function() { console.log.apply(undefined, arguments) },
+    },
+    uploadcare: {
+        // see https://uploadcare.com/docs/uploads/widget/#configuration
+        publicKey: 'demopublickey',
+        crop: 'free',
+        tabs: 'file url instagram',
+        buttonIconEnabled: true
+    }
+});</code></pre>
+
+        <script>
+            $(function () {
+                $R('#redactor', {
+                    plugins: ['uploadcare'],
+                    callbacks: {
+                        uploadcareShow: function () { console.log.apply(undefined, arguments) },
+                        uploadcareDone: function () { console.log.apply(undefined, arguments) },
+                        uploadcareCancel: function () { console.log.apply(undefined, arguments) },
+                    },
+                    uploadcare: {
+                        // see https://uploadcare.com/docs/uploads/widget/#configuration
+                        publicKey: 'demopublickey',
+                        crop: 'free',
+                        tabs: 'file url instagram',
+                        buttonIconEnabled: true
+                    }
+                });
+            });
+        </script>
+
+        <p style="text-align: center">
+            Powered by
+            <a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-ckeditor&utm_content=demo">Uploadcare</a>
+        </p>
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25057731-12"></script>
+    <script>
+        window.dataLayer = (window.dataLayer || [])
+
+        function gtag() { dataLayer.push(arguments) }
+
+        gtag('js', new Date())
+        gtag('config', 'UA-25057731-12')
+    </script>
+</body>
+
+</html>

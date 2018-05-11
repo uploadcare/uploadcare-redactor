@@ -1,19 +1,40 @@
 # Redactor Uploadcare plugin
 
+<a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-ckeditor">
+    <img align="right" width="64" height="64"
+         src="https://ucarecdn.com/2f4864b7-ed0e-4411-965b-8148623aa680/uploadcare-logo-mark.svg"
+         alt="">
+</a>
+
 This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow
 your users to upload files and images from local device, social networks, cloud
 storages without any backend code that is usually required to handle uploads.
 
+[![GitHub release][badge-release-img]][badge-release-url]&nbsp;
+[![Uploadcare stack on StackShare][badge-stack-img]][badge-stack-url]
+
+# Demo
+
+A minimalistic demo can be found here:
+
+ * [Redactor 3 demo page][demo-redactor3]
+ * [Redactor 2 demo page][demo-redactor2]
 
 ## Installation & configuration
 
-1. Copy `uploadcare.js` to your plugins folder
+1. Copy the latest `uploadcare.redactor.js` from [GitHub Releases][releases] 
+to your plugins folder. Or simply clone the release branch:
+
+    ```
+    git clone -b release git@github.com:uploadcare/uploadcare-redactor.git plugins/uploadcare
+    ```
+
 2. Include plugin code on the page with Redactor:
 
     ```html
     <script src="/js/redactor/redactor.js"></script>
      <!-- Plugin -->
-    <script src="/js/redactor/plugins/uploadcare.js"></script>
+    <script src="/js/redactor/plugins/uploadcare.redactor.js"></script>
     ```
 
 3. Enable plugin for Redactor instance providing any Uploadcare [widget
@@ -22,7 +43,7 @@ settings] you may want:
     ```html
     <script type="text/javascript">
         $(function() {
-            $('#redactor').redactor({
+            $R('#redactor', {
                 plugins: ['uploadcare'],
                 uploadcare: {
                     // styling options
@@ -70,14 +91,17 @@ step. Each preset consists of a size definition and optional keyword.
 - "disabled" — crop is disabled. Can't be combined with other presets;
 - "" or "free" — crop enabled and the user will be able to select any area on an image;
 - "2:3" — user will be able to select an area with aspect ratio 2:3;
-- "300x200" — same as previous, but if the selected area is bigger than 300x200, it will be scaled down to these dimensions;
-- "300x200 upscale" — same as previous, but the selected area will be scaled even if it is smaller than the specified size;
-- "300x200 minimum" — user will not be able to select an area smaller than 300x200. If uploaded image is smaller than 300x200 itself, it will be upscaled.
+- "300x200" — same as previous, but if the selected area is bigger than 300x200, it 
+will be scaled down to these dimensions;
+- "300x200 upscale" — same as previous, but the selected area will be scaled even if 
+it is smaller than the specified size;
+- "300x200 minimum" — user will not be able to select an area smaller than 300x200. 
+If uploaded image is smaller than 300x200 itself, it will be upscaled.
 
 ```html
 <script type="text/javascript">
     $(function() {
-        $('#redactor').redactor({
+        $R('#redactor', {
             plugins: ['uploadcare'],
             uploadcare: {
                 publicKey: 'yourapikey',
@@ -181,7 +205,7 @@ Special value `all` can be used to enable all supported sources.
 ```html
 <script type="text/javascript">
     $(function() {
-        $('#redactor').redactor({
+        $R('#redactor', {
             plugins: ['uploadcare'],
             uploadcare: {
                 publicKey: 'yourapikey',
@@ -200,6 +224,13 @@ Uploadcare [widget documentation] to unleash full uploading power.
 
 
 [Imperavi Redactor]: http://imperavi.com/redactor/
-[widget settings]: https://uploadcare.com/documentation/widget/#configuration
-[widget documentation]: https://uploadcare.com/documentation/widget/
+[widget settings]: https://uploadcare.com/docs/uploads/widget/config/
+[widget documentation]: https://uploadcare.com/docs/uploads/widget/
 [Uploadcare]: https://uploadcare.com
+[releases]: https://github.com/uploadcare/uploadcare-redactor/releases
+[demo-redactor3]: https://uploadcare.github.io/uploadcare-redactor/#redactor3
+[demo-redactor2]: https://uploadcare.github.io/uploadcare-redactor/#redactor2
+[badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
+[badge-stack-url]: https://stackshare.io/uploadcare/stacks/
+[badge-release-img]: https://img.shields.io/github/release/uploadcare/uploadcare-redactor.svg
+[badge-release-url]: https://github.com/uploadcare/uploadcare-redactor/releases

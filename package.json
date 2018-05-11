@@ -1,10 +1,18 @@
 {
   "name": "uploadcare-redactor",
   "version": "1.6.0",
-  "description": "This is Uploadcare plugin for [Imperavi Redactor] text editor. It will allow your users to upload files and images from local device, social networks, cloud storages without any backend code that is usually required to handle uploads.",
+  "widgetVersion": "3.x",
+  "description": "This is Uploadcare plugin for Imperavi Redactor text editor.",
   "main": "uploadcare.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "rollup -c -w",
+    "lint": "eslint .",
+    "precommit": "npm run lint",
+    "release": "release-it",
+    "deploy:demo": "node scripts/deploy-demo.js",
+    "deploy:release": "node scripts/deploy-release.js",
+    "build": "npm run clean && rollup -c",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -15,5 +23,18 @@
   "bugs": {
     "url": "https://github.com/uploadcare/uploadcare-redactor/issues"
   },
-  "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme"
+  "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-uploadcare": "^1.1.0",
+    "gh-pages": "^1.1.0",
+    "husky": "^0.14.3",
+    "release-it": "^7.4.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-browsersync": "^0.2.6",
+    "rollup-plugin-jscc": "^0.3.3",
+    "rollup-plugin-license": "^0.6.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
 }
