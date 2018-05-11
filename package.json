@@ -3,7 +3,7 @@
   "version": "1.6.0",
   "widgetVersion": "3.x",
   "description": "File Uploader by Uploadcare. The plugin for Imperavi Redactor to work with Uploadcare Widget.",
-  "main": "uploadcare.js",
+  "main": "./src/uploadcare.js",
   "scripts": {
     "dev": "rollup -c -w",
     "start": "browser-sync start -s ./ -f ./ --port 3000",
