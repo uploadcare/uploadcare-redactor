@@ -6,6 +6,7 @@
   "main": "uploadcare.js",
   "scripts": {
     "dev": "rollup -c -w",
+    "start": "browser-sync start -s ./ -f ./ --port 3000",
     "lint": "eslint .",
     "precommit": "npm run lint",
     "release": "release-it",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
   "devDependencies": {
+    "browser-sync": "^2.24.4",
     "eslint": "^4.19.1",
     "eslint-config-uploadcare": "^1.1.0",
     "gh-pages": "^1.1.0",
