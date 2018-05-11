@@ -11,5 +11,6 @@
   },
   "npm": {
     "publish": false
-  }
+  },
+  "requireCleanWorkingDir": false
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0, 2018-05-11
+
+* Updated the version of the widget, now is `3.x`.
+* Added support for Redactor 3.
+
 ## 1.6.0
 
 - support Redactor callbacks: uploadcareShow, uploadcareDone, uploadcareCancel
