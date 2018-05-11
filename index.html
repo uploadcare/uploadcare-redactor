@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Upload files with Uploadcare</title>
+  <title>File Uploader by Uploadcare, Imperavi Redactor plugin</title>
   <script>
-    window.location = 'demo'
+    var page = window.location.hash ? window.location.hash.slice(1) : 'redactor3';
+    window.location = 'demo/' + page;
   </script>
 </head>
 <body>
-<a href="demo">Go to demo</a>
+<a href="demo/redactor3/">Demo with Redactor 3</a>
+<a href="demo/redactor2/">Demo with Redactor 2</a>
 </body>
 </html>
