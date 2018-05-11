@@ -102,12 +102,12 @@ Your feedback or support requests are welcome at [hello@uploadcare.com][uc-email
 [uc-email-hello]: mailto:hello@uploadcare.com
 [demo-3]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor3/
 [demo-2]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor2/
-[uc-feature-widget]: https://uploadcare.com/features/widget/?utm_source=github&utm_campaign=uploadcare-ckeditor
+[uc-feature-widget]: https://uploadcare.com/features/widget/?utm_source=github&utm_campaign=uploadcare-redactor
 [widget-docs-config]: https://uploadcare.com/docs/uploads/widget/config/
 [widget-docs-js-api]: https://uploadcare.com/docs/api_reference/javascript/
 [widget-docs-options-public-key]: https://uploadcare.com/docs/uploads/widget/config/#option-public-key
-[releases-page]: https://github.com/uploadcare/uploadcare-ckeditor/releases
-[release-branch]: https://github.com/uploadcare/uploadcare-ckeditor/tree/release
+[releases-page]: https://github.com/uploadcare/uploadcare-redactor/releases
+[release-branch]: https://github.com/uploadcare/uploadcare-redactor/tree/release
 [redactor]: https://imperavi.com/redactor/
 [badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
 [badge-stack-url]: https://stackshare.io/uploadcare/stacks/
