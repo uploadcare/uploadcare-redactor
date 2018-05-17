@@ -102,12 +102,12 @@ $R('#editor', {
     uploadcareCancel: function() { console.log.apply(undefined, arguments) },
   },
   uploadcare: {
-    publicKey: 'demopublickey',
     /* set your public API key here */
-    crop: 'free,1:1',
+    publicKey: 'demopublickey',
     /* set crop options when handling images */
-    buttonIconEnabled: true,
+    crop: 'free,1:1',
     /* show icon instead of "Uploadcare" */
+    buttonIconEnabled: true,
     /* feel free to add more “object key” options here */
   }
 })
