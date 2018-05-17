@@ -6,17 +6,30 @@
          alt="">
 </a>
 
-This is a plugin for [Imperavi Redactor][redactor] to work with [Uploadcare Widget][uc-feature-widget].
+This is a plugin for [Imperavi Redactor][redactor] providing it to
+work with [Uploadcare Widget][uc-feature-widget].
 
 [![GitHub release][badge-release-img]][badge-release-url]&nbsp;
 [![Uploadcare stack on StackShare][badge-stack-img]][badge-stack-url]
 
+* [Demo](#demo)
+* [Requirements](#requirements)
+* [Install](#install)
+* [Usage](#usage)
+  * [Redactor 3](#redactor-3)
+  * [Redactor 2](#redactor-2)
+* [Configuration](#configuration)
+  * [Plugin config](#plugin-configuration)
+  * [Widget config](#widget-configuration)
+* [Security issues](#security-issues)
+* [Feedback](#feedback)
+
 ## Demo
 
-A minimalistic demo can be found here:
+Check out the basic demo for:
 
-* [with Redactor 3][demo-3]
-* [with Redactor 2][demo-2]
+* [Redactor 3][demo-3]
+* [Redactor 2][demo-2]
 
 ## Requirements
 
@@ -24,12 +37,13 @@ Imperavi Redactor 2 or 3.
 
 ## Install
 
-Download the latest plugin archive from the [release branch][release-branch]
-or [releases page][releases-page].
+Download the latest plugin archive from the [release branch][github-branch-release]
+or [releases page][github-releases].
 
-Extract the downloaded plugin into the plugins folder of your Redactor installation.
+Extract the downloaded archive to the plugin directory of your Redactor
+installation.
 
-Place the plugin after embedding `redactor.js`,
+Then, place the plugin in your page after embedding `redactor.js`:
 
 ```html
 <!-- redactor js -->
@@ -41,10 +55,12 @@ Place the plugin after embedding `redactor.js`,
 
 ## Usage
 
-Add `uploadcare` to your list of Redactor plugins.
-**Set your [public key][widget-docs-options-public-key]**.
+Add `uploadcare` to the list of your Redactor plugins.
+**Set your [public key][uc-widget-docs-option-public-key]**. Public keys are
+used to identify a target Uploadcare [project][uc-projects] your uploads will
+go to.
 
-With Redactor 3,
+### Redactor 3
 
 ```javascript
 $R('#editor', {
@@ -56,7 +72,7 @@ $R('#editor', {
 })
 ```
 
-With Redactor 2,
+### Redactor 2
 
 ```javascript
 $('#editor').redactor({
@@ -70,7 +86,10 @@ $('#editor').redactor({
 
 ## Configuration
 
-Initialize a plugin with additional options:
+### Plugin configuration
+
+To apply a custom configuration, initialize the plugin providing additional
+options:
 
 ```javascript
 UPLOADCARE_LOCALE = 'ru' /* set locale if you wish */
@@ -83,33 +102,51 @@ $R('#editor', {
     uploadcareCancel: function() { console.log.apply(undefined, arguments) },
   },
   uploadcare: {
-    publicKey: 'demopublickey',
-    crop: 'free,1:1',
+    publicKey: 'demopublickey', // set your public API key here
+    crop: 'free,1:1', // set crop options when handling images
     buttonIconEnabled: true, /* show icon instead of "Uploadcare" */
+    /* feel free to add more “object key” options here */
   }
 })
 ```
 
-You can deeply customize the widget behavior:
-file sources, file validation, and much more.
-Please, check out the [Uploadcare Widget][widget-docs-config]
-and [JavaScript API][widget-docs-js-api] docs.
+### Widget configuration
+
+Uploadcare Widget can be deeply customized to suit your UX/UI. You can define
+allowed upload sources, implement file validation, and more.
+
+Use our live [widget sandbox][uc-widget-configure] as a starting point and consider
+checking out the docs on [widget configuration][uc-widget-docs-config] and its
+[JavaScript API][uc-widget-docs-js-api].
+
+## Security issues
+
+If you think you ran into something in Uploadcare libraries which might have
+security implications, please hit us up at [bugbounty@uploadcare.com][uc-email-bounty]
+or Hackerone.
+
+We'll contact you personally in a short time to fix an issue through co-op and
+prior to any public disclosure.
 
 ## Feedback
 
-Your feedback or support requests are welcome at [hello@uploadcare.com][uc-email-hello].
+Issues and PRs are welcome. You can provide your feedback or drop us a support
+request at [hello@uploadcare.com][uc-email-hello].
 
-[uc-email-hello]: mailto:hello@uploadcare.com
-[demo-3]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor3/
-[demo-2]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor2/
-[uc-feature-widget]: https://uploadcare.com/features/widget/?utm_source=github&utm_campaign=uploadcare-redactor
-[widget-docs-config]: https://uploadcare.com/docs/uploads/widget/config/
-[widget-docs-js-api]: https://uploadcare.com/docs/api_reference/javascript/
-[widget-docs-options-public-key]: https://uploadcare.com/docs/uploads/widget/config/#option-public-key
-[releases-page]: https://github.com/uploadcare/uploadcare-redactor/releases
-[release-branch]: https://github.com/uploadcare/uploadcare-redactor/tree/release
 [redactor]: https://imperavi.com/redactor/
-[badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
-[badge-stack-url]: https://stackshare.io/uploadcare/stacks/
+[uc-feature-widget]: https://uploadcare.com/features/widget/?utm_source=github&utm_campaign=uploadcare-redactor
 [badge-release-img]: https://img.shields.io/github/release/uploadcare/uploadcare-redactor.svg
 [badge-release-url]: https://github.com/uploadcare/uploadcare-redactor/releases
+[badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
+[badge-stack-url]: https://stackshare.io/uploadcare/stacks/
+[demo-3]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor3/
+[demo-2]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor2/
+[github-branch-release]: https://github.com/uploadcare/uploadcare-redactor/tree/release
+[github-releases]: https://github.com/uploadcare/uploadcare-redactor/releases
+[uc-widget-docs-option-public-key]: https://uploadcare.com/docs/uploads/widget/config/?utm_source=github&utm_campaign=uploadcare-redactor#option-public-key
+[uc-projects]: https://uploadcare.com/docs/keys/?utm_source=github&utm_campaign=uploadcare-redactor#projects
+[uc-widget-configure]: https://uploadcare.com/widget/configure/3.x/?utm_source=github&utm_campaign=uploadcare-redactor
+[uc-widget-docs-config]: https://uploadcare.com/docs/uploads/widget/config/?utm_source=github&utm_campaign=uploadcare-redactor
+[uc-widget-docs-js-api]: https://uploadcare.com/docs/api_reference/javascript/?utm_source=github&utm_campaign=uploadcare-redactor
+[uc-email-bounty]: mailto:bugbounty@uploadcare.com
+[uc-email-hello]: mailto:hello@uploadcare.com
