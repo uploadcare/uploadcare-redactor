@@ -19,8 +19,8 @@ work with [Uploadcare Widget][uc-feature-widget].
   * [Redactor 3](#redactor-3)
   * [Redactor 2](#redactor-2)
 * [Configuration](#configuration)
-  * [Plugin config](#plugin-configuration)
-  * [Widget config](#widget-configuration)
+  * [Plugin configuration](#plugin-configuration)
+  * [Widget configuration](#widget-configuration)
 * [Security issues](#security-issues)
 * [Feedback](#feedback)
 
@@ -102,9 +102,12 @@ $R('#editor', {
     uploadcareCancel: function() { console.log.apply(undefined, arguments) },
   },
   uploadcare: {
-    publicKey: 'demopublickey', // set your public API key here
-    crop: 'free,1:1', // set crop options when handling images
-    buttonIconEnabled: true, /* show icon instead of "Uploadcare" */
+    publicKey: 'demopublickey',
+    /* set your public API key here */
+    crop: 'free,1:1',
+    /* set crop options when handling images */
+    buttonIconEnabled: true,
+    /* show icon instead of "Uploadcare" */
     /* feel free to add more “object key” options here */
   }
 })
@@ -139,8 +142,8 @@ request at [hello@uploadcare.com][uc-email-hello].
 [badge-release-url]: https://github.com/uploadcare/uploadcare-redactor/releases
 [badge-stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
 [badge-stack-url]: https://stackshare.io/uploadcare/stacks/
-[demo-3]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor3/
-[demo-2]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor2/
+[demo-3]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor3/?utm_source=github&utm_campaign=uploadcare-redactor
+[demo-2]: https://uploadcare.github.io/uploadcare-redactor/demo/redactor2/?utm_source=github&utm_campaign=uploadcare-redactor
 [github-branch-release]: https://github.com/uploadcare/uploadcare-redactor/tree/release
 [github-releases]: https://github.com/uploadcare/uploadcare-redactor/releases
 [uc-widget-docs-option-public-key]: https://uploadcare.com/docs/uploads/widget/config/?utm_source=github&utm_campaign=uploadcare-redactor#option-public-key
