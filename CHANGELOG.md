@@ -26,7 +26,7 @@ and this project adheres to
 [uc-feature-widget]: https://uploadcare.com/features/widget/
 [uc-docs-api-reference-upload]: https://uploadcare.com/docs/api_reference/upload/
 
-## 1.6.0
+## 1.6.0, 2017-06-18
 
 - support Redactor callbacks: uploadcareShow, uploadcareDone, uploadcareCancel
 - compatibility with latest Redactor 2 toolbar icons (default)
@@ -35,36 +35,36 @@ and this project adheres to
 - assign data-image and data-file attributes for Redactor storage management,
   see [docs](https://imperavi.com/redactor/docs/storage/)
 
-## 1.5.2
+## 1.5.2, 2017-01-16
 
 - update CDN link to the widget
 
-## 1.5.1
+## 1.5.1, 2016-10-24
 
 - update widget version to 2.10.2 (see [widget changelog][widget changelog])
 
-## 1.5.0
+## 1.5.0, 2016-10-13
 
 - fix behavior of image insertion and wrap them in $opts.imageTag
 
-## 1.4.1
+## 1.4.1, 2016-09-14
 
 - update widget version to 2.10.0 (see [widget changelog][widget changelog])
 
-## 1.4.0
+## 1.4.0. 2016-04-06
 
 - add `iconButtonEnabled` option to enable/disable button icon
 - add `buttonBefore` option to configure the position of the button in the toolbar
 - add `buttonLabel` option to configure button label
 
-## 1.3.0
+## 1.3.0, 2016-04-05
 
 - add package.json
 - wrap code in IIFE
 - add authors.txt
 - update widget version to 2.8.2 (see [widget changelog][widget changelog])
 
-## 1.2.0
+## 1.2.0, 2016-01-27
 
 - update plugin to work with Redactor II
 - update widget version to 2.6.0 (see [widget changelog][widget changelog])
