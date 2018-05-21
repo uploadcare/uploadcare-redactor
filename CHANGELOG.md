@@ -1,9 +1,30 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
+and this project adheres to
+[Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
 ## 2.0.0, 2018-05-11
 
-* Updated the version of the widget, now is `3.x`.
-* Added support for Redactor 3.
+### Added
+
+* [Redactor 3][redactor-home] support; [File Uploader][github-redactor] now
+  works with both v2 and v3.
+
+### Changed
+
+* The default [widget][uc-feature-widget] version for
+  [File Uploader][github-redactor] is now `3.x`.
+* Added `integration` to the default widget config to provide info on used
+  Redactor and plugin versions to User Agent with requests to Uploadcare
+  [Upload API][uc-docs-api-reference-upload].
+
+[redactor-home]: https://imperavi.com/redactor/
+[github-redactor]: https://github.com/uploadcare/uploadcare-redactor/
+[uc-feature-widget]: https://uploadcare.com/features/widget/
+[uc-docs-api-reference-upload]: https://uploadcare.com/docs/api_reference/upload/
 
 ## 1.6.0
 
