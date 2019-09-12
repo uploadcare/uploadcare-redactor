@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/),
 and this project adheres to
 [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 2.0.1, 2019-09-12
+
+### Fixed
+
+* Fix working with multiple redactor v2 inputs. See [#20][pr-20].
+
+[pr-20]: https://github.com/uploadcare/uploadcare-redactor/pull/20
+
 ## 2.0.0, 2018-05-11
 
 ### Added
