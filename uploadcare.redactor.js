@@ -1,8 +1,8 @@
 /**
- * uploadcare-redactor 2.0.0
+ * uploadcare-redactor 2.0.1
  * File Uploader by Uploadcare. The plugin for Imperavi Redactor to work with Uploadcare Widget.
  * https://github.com/uploadcare/uploadcare-redactor#readme
- * Date: 2018-05-11
+ * Date: 2019-09-12
  */
 
 (function ($,$R) {
@@ -54,7 +54,7 @@
 
   function applyIntegrationOption() {
     var redactorVersion = getVersion() || getVersion$1();
-    var pluginVerion = '2.0.0';
+    var pluginVerion = '2.0.1';
 
     this.ucOpts.integration = 'Redactor/{redactorVersion}; Uploadcare-Redactor/{pluginVerion}'
       .replace('{redactorVersion}', redactorVersion)
@@ -195,9 +195,21 @@
     return this.selection
   }
 
+  function wrap(fn) {
+    return function() {
+      fn.call(this);
+    }
+  }
+
   function addPlugin$1(pluginBody) {
     $.Redactor.prototype.uploadcare = function() {
-      return pluginBody
+      return Object.keys(pluginBody).reduce(function(acc, key) {
+        var value = pluginBody[key];
+
+        acc[key] = typeof value === 'function' ? wrap(value) : value;
+
+        return acc
+      }, {})
     };
   }
 
