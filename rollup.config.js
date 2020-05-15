@@ -1,7 +1,7 @@
 import jscc from 'rollup-plugin-jscc'
 import license from 'rollup-plugin-license'
 import pkg from './package.json'
-import uglify from 'rollup-plugin-uglify'
+import {uglify} from 'rollup-plugin-uglify'
 import browsersync from 'rollup-plugin-browsersync'
 
 const isWatching = process.argv.includes('-w') || process.argv.includes('--watch')
