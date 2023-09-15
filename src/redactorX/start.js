@@ -11,7 +11,7 @@ export default function start() {
   }
 
   if (this.ucOpts.buttonIconEnabled) {
-    buttonData.icon = (buttonIcon.indexOf('<svg ') === -1) ? '<i class="' + buttonIcon + '"></i>' : buttonIcon;
+    buttonData.icon = (buttonIcon.indexOf('<svg') === -1) ? '<i class="' + buttonIcon + '"></i>' : buttonIcon;
   }
 
   this.app[buttonBar].add('uploadcare', buttonData)
