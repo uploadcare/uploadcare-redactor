@@ -22,9 +22,10 @@ const plugins = [
 const globals = {
   jQuery: 'window.jQuery',
   Redactor: 'window.Redactor',
+  RedactorX: 'window.RedactorX',
 }
 
-const external = ['jQuery', 'Redactor']
+const external = ['jQuery', 'Redactor', 'RedactorX']
 
 export default [
   {

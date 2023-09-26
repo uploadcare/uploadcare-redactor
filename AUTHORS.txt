@@ -3,6 +3,7 @@
 Dmitry Mukhin <dm@uploadcare.com>
 Fabien Franzen <info@atelierfabien.be>
 Jason Pirkey <jason@pirkplace.com>
+Karel Vasicek <karel@trueapps.cz>
 Tim Kleier <tim.kleier@elic.org>
 Timon van Spronsen <timonvanspronsen@outlook.com>
 Andy Abgottspon <andy.abgottspon@hazu.io>

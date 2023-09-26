@@ -1,6 +1,6 @@
 {
   "name": "uploadcare-redactor",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "widgetVersion": "3.x",
   "description": "File Uploader by Uploadcare. The plugin for Imperavi Redactor to work with Uploadcare Widget.",
   "main": "./src/uploadcare.js",

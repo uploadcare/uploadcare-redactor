@@ -16,6 +16,7 @@ work with [Uploadcare Widget][uc-feature-widget].
 * [Requirements](#requirements)
 * [Install](#install)
 * [Usage](#usage)
+  * [Redactor X](#redactor-X)
   * [Redactor 3](#redactor-3)
   * [Redactor 2](#redactor-2)
 * [Configuration](#configuration)
@@ -33,7 +34,7 @@ Check out the basic demo for:
 
 ## Requirements
 
-Imperavi Redactor 2 or 3.
+Imperavi Redactor 2, 3 or X.
 
 ## Install
 
@@ -59,6 +60,18 @@ Add `uploadcare` to the list of your Redactor plugins.
 **Set your [public key][uc-widget-docs-option-public-key]**. Public keys are
 used to identify a target Uploadcare [project][uc-projects] your uploads will
 go to.
+
+### Redactor X
+
+```javascript
+RedactorX('#editor', {
+  plugins: ['uploadcare'],
+  uploadcare: {
+    buttonIconEnabled: true,
+    publicKey: 'YOUR_PUBLIC_KEY',
+  }
+})
+```
 
 ### Redactor 3
 
