@@ -2,6 +2,7 @@
 
 Dmitry Mukhin <dm@uploadcare.com>
 Fabien Franzen <info@atelierfabien.be>
+Hassan Abdullah <hassanraja.dev@gmail.com>
 Jason Pirkey <jason@pirkplace.com>
 Karel Vasicek <karel@trueapps.cz>
 Tim Kleier <tim.kleier@elic.org>
