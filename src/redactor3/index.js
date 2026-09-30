@@ -3,7 +3,7 @@ import {broadcast} from './broadcast'
 import {getSelection} from './getSelection'
 import {getVersion} from './getVersion'
 import {init} from './init'
-import {insertHtml} from './insertHtml'
+import {insertFiles} from './insertFiles'
 import {start} from './start'
 
 export var redactor3 = {
@@ -12,6 +12,6 @@ export var redactor3 = {
   getSelection: getSelection,
   getVersion: getVersion,
   init: init,
-  insertHtml: insertHtml,
+  insertFiles: insertFiles,
   start: start,
 }

@@ -9,14 +9,14 @@ export function done(data) {
   $.when.apply(null, files).done(function() {
     var resolvedFiles = Array.prototype.slice.call(arguments)
 
-    $.each(resolvedFiles, function() {
-      if ($.isFunction($this.ucOpts.uploadCompleteCallback)) {
+    if ($.isFunction($this.ucOpts.uploadCompleteCallback)) {
+      $.each(resolvedFiles, function() {
         $this.ucOpts.uploadCompleteCallback.call($this, this)
-      }
-      else {
-        adapter.insertHtml($this, this)
-      }
-    })
+      })
+    }
+    else {
+      adapter.insertFiles($this, resolvedFiles)
+    }
     adapter.broadcast.call($this, 'uploadcareDone', resolvedFiles)
   })
 }

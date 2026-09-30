@@ -1,6 +1,12 @@
 import {getFileUrl} from '../common/getFileUrl'
 
-export function insertHtml(plugin, fileInfo) {
+export function insertFiles(plugin, fileInfos) {
+  fileInfos.forEach(function(fileInfo) {
+    insertFile(plugin, fileInfo)
+  })
+}
+
+function insertFile(plugin, fileInfo) {
   var fileUrl = getFileUrl(fileInfo)
 
   if (fileInfo.isImage) {
@@ -23,14 +29,17 @@ export function insertHtml(plugin, fileInfo) {
       type: 'image',
     })
 
+    // files uploaded together have no crop info
+    var size = fileInfo.crop || fileInfo.originalImageInfo || {}
+
     plugin.app.broadcast('image.upload', {
       instance: instance,
       data: {
         src: fileUrl,
         id: fileInfo.uuid,
         name: fileInfo.name,
-        width: fileInfo.crop.width,
-        height: fileInfo.crop.height,
+        width: size.width,
+        height: size.height,
       },
     })
   }

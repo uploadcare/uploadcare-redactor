@@ -1,6 +1,12 @@
 import {getFileUrl} from '../common/getFileUrl'
 
-export function insertHtml(plugin, fileInfo) {
+export function insertFiles(plugin, fileInfos) {
+  fileInfos.forEach(function(fileInfo) {
+    insertFile(plugin, fileInfo)
+  })
+}
+
+function insertFile(plugin, fileInfo) {
   var fileUrl = getFileUrl(fileInfo)
 
   if (fileInfo.isImage) {
