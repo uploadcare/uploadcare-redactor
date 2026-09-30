@@ -13,7 +13,10 @@ function reButton(box) {
 
 export const redactor2 = {
   name: 'Redactor 2',
-  integration: /^Redactor\/2\.\d+; Uploadcare-Redactor\/\d+\.\d+\.\d+$/,
+  // the loaded editor must be this version, and the plugin must report it
+  expectedVersion: /^2\./,
+  version: () => window.jQuery && window.jQuery.Redactor && window.jQuery.Redactor.VERSION,
+  reportedVersion: version => version,
   styles: ['/demo/redactor2/redactor.min.css'],
   scripts: [JQUERY, '/demo/redactor2/redactor.min.js', PLUGIN],
   defaultIcon: 're-icon-file',
@@ -37,7 +40,9 @@ export const redactor2 = {
 
 export const redactor3 = {
   name: 'Redactor 3',
-  integration: /^Redactor\/3\.\d+\.\d+; Uploadcare-Redactor\/\d+\.\d+\.\d+$/,
+  expectedVersion: /^3\./,
+  version: () => window.$R && window.$R.version,
+  reportedVersion: version => version,
   styles: ['/demo/redactor3/redactor.min.css'],
   scripts: [JQUERY, '/demo/redactor3/redactor.js', PLUGIN],
   defaultIcon: 're-icon-file',
@@ -62,7 +67,10 @@ export const redactor3 = {
 // Redactor X shows plugin buttons only while a block is selected
 export const redactorX = {
   name: 'Redactor X',
-  integration: /^Redactor\/X1\.\d+\.\d+; Uploadcare-Redactor\/\d+\.\d+\.\d+$/,
+  // Redactor X is numbered 1.x; the plugin reports it with an X prefix
+  expectedVersion: /^1\./,
+  version: () => window.RedactorX && window.RedactorX.version,
+  reportedVersion: version => 'X' + version,
   styles: ['/demo/redactorX/redactorx.min.css'],
   scripts: [JQUERY, '/demo/redactorX/redactorx.js', PLUGIN],
   defaultIcon: 'rx-icon-file',
@@ -92,7 +100,9 @@ export const redactorX = {
 // a real build yet, so selectors may need adjusting the first time it does
 export const redactor5 = {
   name: 'Redactor 5',
-  integration: /^Redactor\/5\.\d+\.\d+; Uploadcare-Redactor\/\d+\.\d+\.\d+$/,
+  expectedVersion: /^5\./,
+  version: () => window.Redactor && window.Redactor.version,
+  reportedVersion: version => version,
   styles: [],
   scripts: [PLUGIN],
   defaultIcon: null,

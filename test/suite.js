@@ -1,4 +1,5 @@
 import {afterEach, beforeAll, describe, expect, test} from 'vitest'
+import pkg from '../package.json'
 import {userEvent} from 'vitest/browser'
 import {
   ACCEPTS_ANY_FILE,
@@ -55,6 +56,9 @@ export function defineSuite(adapter) {
   describe(adapter.name, () => {
     beforeAll(async () => {
       await loadPage(adapter)
+      // stops the whole file with a clear message when the page has another
+      // Redactor build than the one this file tests
+      expect(String(adapter.version()), `${adapter.name} build on the page`).toMatch(adapter.expectedVersion)
       // the first editor loads the widget, the others reuse it
       setup()
       await waitForWidget()
@@ -162,7 +166,10 @@ export function defineSuite(adapter) {
         expect(typeof widgetDialog.done).toBe('function')
         expect(options.publicKey).toBe(PUBLIC_KEY)
         expect(options.crop).toBe('free,1:1')
-        expect(options.integration).toMatch(adapter.integration)
+        // a wrong adapter would report another editor or none, as in "Redactor/undefined"
+        expect(options.integration).toBe(
+          `Redactor/${adapter.reportedVersion(adapter.version())}; Uploadcare-Redactor/${pkg.version}`
+        )
       })
 
       test('sends the cancel event and keeps the text when closed', async () => {
