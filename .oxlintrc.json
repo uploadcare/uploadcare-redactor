@@ -1,0 +1,115 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "browser": true,
+    "es2015": true
+  },
+  "globals": {
+    "uploadcare": "readonly"
+  },
+  "ignorePatterns": [
+    "dist/**",
+    "demo/**"
+  ],
+  "rules": {
+    "eqeqeq": 2,
+    "no-console": [
+      "error"
+    ],
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-fallthrough": 2,
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "acc",
+          "accumulator",
+          "e",
+          "req",
+          "request",
+          "res",
+          "response"
+        ]
+      }
+    ],
+    "no-redeclare": 2,
+    "no-unused-vars": "error",
+    "radix": [
+      2,
+      "as-needed"
+    ],
+    "no-undef": "error",
+    "arrow-body-style": [
+      "error",
+      "as-needed",
+      {
+        "requireReturnForObjectLiteral": false
+      }
+    ],
+    "func-names": [
+      "error",
+      "never"
+    ],
+    "func-style": [
+      "error",
+      "declaration",
+      {
+        "allowArrowFunctions": true
+      }
+    ],
+    "id-match": "error",
+    "max-depth": [
+      "error",
+      4
+    ],
+    "max-params": [
+      "error",
+      4
+    ],
+    "new-cap": "error",
+    "no-array-constructor": "error",
+    "no-bitwise": "error",
+    "no-continue": "error",
+    "no-lonely-if": "error",
+    "no-negated-condition": "error",
+    "no-nested-ternary": "error",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-underscore-dangle": "error",
+    "no-unneeded-ternary": "error",
+    "one-var": [
+      "error",
+      "never"
+    ],
+    "operator-assignment": [
+      "error",
+      "always"
+    ],
+    "sort-vars": "error",
+    "unicode-bom": [
+      "error",
+      "never"
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "scripts/**",
+        "vite.config.mjs"
+      ],
+      "env": {
+        "node": true,
+        "browser": false
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}
