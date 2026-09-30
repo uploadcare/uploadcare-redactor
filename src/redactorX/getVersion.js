@@ -1,6 +1,6 @@
-import $RX from 'RedactorX'
+import {$RX} from '../globals'
 
-export default function getVersion() {
+export function getVersion() {
   if (typeof $RX !== 'undefined') {
     return 'X' + $RX.version
   }

@@ -1,16 +1,16 @@
-import done from './done'
-import wrappers from '../wrappers'
+import {done} from './done'
+import {adapter} from '../adapter'
 
-export default function show() {
+export function show() {
   var dialog = uploadcare.openDialog({}, this.ucOpts)
 
-  wrappers.getSelection.call(this).save()
-  wrappers.broadcast.call(this, 'uploadcareShow', dialog, this.ucOpts)
+  adapter.getSelection.call(this).save()
+  adapter.broadcast.call(this, 'uploadcareShow', dialog, this.ucOpts)
 
   dialog.fail(
     function() {
-      wrappers.getSelection.call(this).restore()
-      wrappers.broadcast.call(this, 'uploadcareCancel')
+      adapter.getSelection.call(this).restore()
+      adapter.broadcast.call(this, 'uploadcareCancel')
     }.bind(this)
   )
 

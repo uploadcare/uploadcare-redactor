@@ -1,11 +1,11 @@
-import $ from 'jQuery'
-import wrappers from '../wrappers'
+import {$} from '../globals'
+import {adapter} from '../adapter'
 
-export default function done(data) {
+export function done(data) {
   var $this = this
   var files = this.ucOpts.multiple ? data.files() : [data]
 
-  wrappers.getSelection.call(this).restore()
+  adapter.getSelection.call(this).restore()
   $.when.apply(null, files).done(function() {
     var resolvedFiles = Array.prototype.slice.call(arguments)
 
@@ -14,9 +14,9 @@ export default function done(data) {
         $this.ucOpts.uploadCompleteCallback.call($this, this)
       }
       else {
-        wrappers.insertHtml($this, this)
+        adapter.insertHtml($this, this)
       }
     })
-    wrappers.broadcast.call($this, 'uploadcareDone', resolvedFiles)
+    adapter.broadcast.call($this, 'uploadcareDone', resolvedFiles)
   })
 }

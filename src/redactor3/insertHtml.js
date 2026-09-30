@@ -1,6 +1,6 @@
-import getFileUrl from '../common/getFileUrl'
+import {getFileUrl} from '../common/getFileUrl'
 
-export default function insertHtml(plugin, fileInfo) {
+export function insertHtml(plugin, fileInfo) {
   var fileUrl = getFileUrl(fileInfo)
 
   if (fileInfo.isImage) {

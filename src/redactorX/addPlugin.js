@@ -1,5 +1,5 @@
-import $RX from 'RedactorX'
+import {$RX} from '../globals'
 
-export default function addPlugin(pluginBody) {
+export function addPlugin(pluginBody) {
   $RX.add('plugin', 'uploadcare', pluginBody)
 }

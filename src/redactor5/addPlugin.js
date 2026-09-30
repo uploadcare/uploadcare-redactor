@@ -1,7 +1,7 @@
-import $R from 'Redactor'
-import UploadcarePlugin from './plugin'
+import {$R} from '../globals'
+import {UploadcarePlugin} from './plugin'
 
-// Redactor 5 plugins are classes, so the object-literal body built in uploadcare.js is not used here
-export default function addPlugin() {
+// Redactor 5 plugins are classes, so the object-literal body from uploadcare.js is unused here
+export function addPlugin() {
   $R.addPlugin('uploadcare', UploadcarePlugin)
 }

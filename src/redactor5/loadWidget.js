@@ -1,4 +1,4 @@
-export default function loadWidget(version) {
+export function loadWidget(version) {
   if (typeof window.uploadcare !== 'undefined' || document.querySelector('script[data-uploadcare-widget]')) {
     return
   }

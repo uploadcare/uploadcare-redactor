@@ -1,5 +1,5 @@
-import $R from 'Redactor'
+import {$R} from '../globals'
 
-export default function addPlugin(pluginBody) {
+export function addPlugin(pluginBody) {
   $R.add('plugin', 'uploadcare', pluginBody)
 }

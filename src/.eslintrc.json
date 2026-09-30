@@ -1,10 +1,10 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
-  "parserOptions": {
-    "ecmaVersion": 5,
-    "sourceType": "module"
+  "globals": {
+    "uploadcare": "readonly"
   },
   "rules": {
     "consistent-this": "off"

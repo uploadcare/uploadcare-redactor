@@ -1,12 +1,17 @@
-import checkRedactor from './checkRedactor'
-import wrappers from './wrappers'
-import done from './common/done'
-import show from './common/show'
+import {adapter} from './adapter'
+import {done} from './common/done'
+import {show} from './common/show'
 
-checkRedactor() &&
-wrappers.addPlugin({
-  init: wrappers.init,
-  start: wrappers.start,
-  show: show,
-  done: done,
-})
+if (adapter) {
+  adapter.addPlugin({
+    init: adapter.init,
+    start: adapter.start,
+    show: show,
+    done: done,
+  })
+}
+else {
+  /* eslint-disable no-console */
+  console.error('Uploadcare: Redactor not found.')
+  /* eslint-enable no-console */
+}

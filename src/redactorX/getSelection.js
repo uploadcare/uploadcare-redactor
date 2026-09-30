@@ -1,3 +1,3 @@
-export default function getSelection() {
+export function getSelection() {
   return this.app.selection
 }
