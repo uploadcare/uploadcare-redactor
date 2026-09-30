@@ -8,6 +8,10 @@ Use Node.js 22 or newer and run `npm install`.
 and `dist/uploadcare.redactor.min.js`, as ES2015. `npm run dev` rebuilds on
 every change. `npm run lint` checks the code with oxlint.
 
+`npm start` serves the repository with Vite at http://localhost:3000; the
+demos under `demo/` load the plugin from `dist/`, so run `npm run build` or
+`npm run dev` first.
+
 ## Tests
 
 ```sh

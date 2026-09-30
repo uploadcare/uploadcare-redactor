@@ -6,7 +6,7 @@
   "main": "./src/uploadcare.js",
   "scripts": {
     "dev": "vite build --watch",
-    "start": "browser-sync start -s ./ -f ./ --port 3000",
+    "start": "vite --port 3000",
     "lint": "oxlint",
     "deploy": "npm run build && node scripts/deploy-release.js && node scripts/deploy-demo.js",
     "predeploy:demo": "npm run build",
@@ -28,7 +28,6 @@
   "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
   "devDependencies": {
     "@vitest/browser-playwright": "^5.0.2",
-    "browser-sync": "^2.26.7",
     "gh-pages": "^6.3.0",
     "jquery": "^2.2.4",
     "oxlint": "^1.86.0",
