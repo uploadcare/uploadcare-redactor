@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Uploadcare for Redactor 3</title>
+  <title>Uploadcare for Redactor X</title>
   <link rel="stylesheet" href="../assets/fonts.css">
   <link rel="stylesheet" href="../assets/app.css">
-  <link rel="stylesheet" href="redactor.min.css">
+  <link rel="stylesheet" href="redactorx.min.css">
 </head>
 <body>
   <main class="page">
     <header>
-      <h1 class="title">Uploadcare for Redactor 3</h1>
+      <h1 class="title">Uploadcare for Redactor X</h1>
       <p class="lead">
         Upload images and files into Redactor with the Uploadcare Widget.
         Try it below, then copy the code.
       </p>
       <nav aria-label="Redactor version">
         <ul class="versions">
-          <li><a href="../redactorX/">Redactor X</a></li>
-          <li><a href="../redactor3/" aria-current="page">Redactor 3</a></li>
+          <li><a href="../redactorX/" aria-current="page">Redactor X</a></li>
+          <li><a href="../redactor3/">Redactor 3</a></li>
           <li><a href="../redactor2/">Redactor 2</a></li>
         </ul>
       </nav>
@@ -27,6 +27,9 @@
 
     <section class="section" aria-labelledby="demo-title">
       <h2 class="section-title" id="demo-title">Demo</h2>
+      <p class="hint">
+        The Uploadcare button appears on the toolbar once you click into the text: Redactor&nbsp;X shows plugin buttons only while a block is selected.
+      </p>
 
       <textarea id="editor">
         <h2>Try the uploader</h2>
@@ -39,20 +42,19 @@
       <h2 class="section-title" id="code-title">Code</h2>
       <pre><code>&lt;!-- jQuery is required by the plugin --&gt;
 &lt;script src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
-&lt;script src="redactor.min.js"&gt;&lt;/script&gt;
+&lt;script src="redactorx.min.js"&gt;&lt;/script&gt;
 &lt;script src="uploadcare.redactor.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
-  $R('#editor', {
+  RedactorX('#editor', {
     plugins: ['uploadcare'],
-    callbacks: {
-      uploadcareShow: function() { console.log.apply(undefined, arguments) },
-      uploadcareDone: function() { console.log.apply(undefined, arguments) },
-      uploadcareCancel: function() { console.log.apply(undefined, arguments) },
+    subscribe: {
+      uploadcareShow: function(event) { console.log(event.params) },
+      uploadcareDone: function(event) { console.log(event.params) },
+      uploadcareCancel: function(event) { console.log(event.params) },
     },
     uploadcare: {
       publicKey: 'demopublickey',
       crop: 'free,1:1',
-      buttonIconEnabled: true,
     },
   })
 &lt;/script&gt;</code></pre>
@@ -69,20 +71,19 @@
   </main>
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="redactor.js"></script>
+  <script src="redactorx.js"></script>
   <script src="../../dist/uploadcare.redactor.min.js"></script>
   <script>
-    $R('#editor', {
+    RedactorX('#editor', {
       plugins: ['uploadcare'],
-      callbacks: {
-        uploadcareShow: function() { console.log.apply(undefined, arguments) },
-        uploadcareDone: function() { console.log.apply(undefined, arguments) },
-        uploadcareCancel: function() { console.log.apply(undefined, arguments) },
+      subscribe: {
+        uploadcareShow: function(event) { console.log(event.params) },
+        uploadcareDone: function(event) { console.log(event.params) },
+        uploadcareCancel: function(event) { console.log(event.params) },
       },
       uploadcare: {
         publicKey: 'demopublickey',
         crop: 'free,1:1',
-        buttonIconEnabled: true,
       },
     })
   </script>
