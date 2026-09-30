@@ -232,6 +232,19 @@ export function defineSuite(adapter) {
         await waitFor(() => adapter.content(editor.box).querySelectorAll('img').length === 2, 5_000)
       })
 
+      test('keeps markup in file names as text', async () => {
+        const editor = setup()
+        // no slash: file names can't contain one
+        const [file] = await upload(editor, [await makeImage('a"><img src=x onerror=alert(1)>.png')])
+
+        expect(file.name).toContain('<img')
+
+        const image = await waitFor(() => adapter.content(editor.box).querySelector('img'), 5_000)
+
+        expect(image.getAttribute('alt')).toBe(file.name)
+        expect(adapter.content(editor.box).querySelectorAll('img')).toHaveLength(1)
+      })
+
       test.runIf(supports.imageTag)('wraps images in imageTag', async () => {
         const editor = setup({imageTag: 'figure'})
 

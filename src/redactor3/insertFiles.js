@@ -1,3 +1,4 @@
+import {escapeHtml} from '../common/escapeHtml'
 import {getFileUrl} from '../common/getFileUrl'
 
 // images go in one call: each separate insert replaces the image selected by
@@ -11,14 +12,14 @@ export function insertFiles(plugin, fileInfos) {
     if (fileInfo.isImage) {
       images[fileInfo.uuid] = {
         url: fileUrl,
-        alt: fileInfo.name,
+        alt: escapeHtml(fileInfo.name),
         id: fileInfo.uuid,
       }
     }
     else {
       plugin.app.api('module.link.insert', {
         url: fileUrl,
-        text: fileInfo.name,
+        text: escapeHtml(fileInfo.name),
         id: fileInfo.uuid,
       })
     }

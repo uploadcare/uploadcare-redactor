@@ -1,3 +1,4 @@
+import {escapeHtml} from '../common/escapeHtml'
 import {getFileUrl} from '../common/getFileUrl'
 
 export function insertFiles(plugin, fileInfos) {
@@ -45,7 +46,7 @@ function insertFile(plugin, fileInfo) {
   }
   else {
     plugin.app.insertion.insertHtml(
-      '<a href="' + fileUrl + '" data-file="' + fileInfo.uuid + '">' + fileInfo.name + '</a>'
+      '<a href="' + fileUrl + '" data-file="' + fileInfo.uuid + '">' + escapeHtml(fileInfo.name) + '</a>'
     )
   }
 }

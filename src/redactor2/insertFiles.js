@@ -1,3 +1,4 @@
+import {escapeHtml} from '../common/escapeHtml'
 import {getFileUrl} from '../common/getFileUrl'
 
 export function insertFiles(plugin, fileInfos) {
@@ -18,7 +19,7 @@ function insertFile(plugin, fileInfo) {
       '<img src="' +
       fileUrl +
       '" alt="' +
-      fileInfo.name +
+      escapeHtml(fileInfo.name) +
       '" data-image="' +
       fileInfo.uuid +
       '" />' +
@@ -27,6 +28,9 @@ function insertFile(plugin, fileInfo) {
     )
   }
   else {
-    plugin.insert.html('<a href="' + fileUrl + '" data-file="' + fileInfo.uuid + '">' + fileInfo.name + '</a>', false)
+    plugin.insert.html(
+      '<a href="' + fileUrl + '" data-file="' + fileInfo.uuid + '">' + escapeHtml(fileInfo.name) + '</a>',
+      false
+    )
   }
 }
