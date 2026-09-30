@@ -10,9 +10,8 @@ export function start() {
     buttonData.position = {before: this.ucOpts.buttonBefore}
   }
 
-  if (this.ucOpts.buttonIconEnabled) {
-    buttonData.icon = (buttonIcon.indexOf('<svg') === -1) ? '<i class="' + buttonIcon + '"></i>' : buttonIcon
-  }
+  // the Redactor X toolbar shows icons only, so a button always gets one
+  buttonData.icon = (buttonIcon.indexOf('<svg') === -1) ? '<i class="' + buttonIcon + '"></i>' : buttonIcon
 
   this.app[buttonBar].add('uploadcare', buttonData)
 }
