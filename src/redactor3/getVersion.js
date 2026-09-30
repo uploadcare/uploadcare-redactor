@@ -1,6 +1,6 @@
-import $R from 'Redactor'
+import {$R} from '../globals'
 
-export default function getVersion() {
+export function getVersion() {
   if (typeof $R !== 'undefined') {
     return $R.version
   }

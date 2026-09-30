@@ -1,4 +1,4 @@
-export default function start() {
+export function start() {
   var button = this.ucOpts.buttonBefore
     ? this.button.addBefore(this.ucOpts.buttonBefore, 'uploadcare', this.ucOpts.buttonLabel || 'Uploadcare')
     : this.button.add('uploadcare', this.ucOpts.buttonLabel || 'Uploadcare')

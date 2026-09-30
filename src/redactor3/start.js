@@ -1,4 +1,4 @@
-export default function start() {
+export function start() {
   var buttonData = {
     title: this.ucOpts.buttonLabel || 'Uploadcare',
     api: 'plugin.uploadcare.show',

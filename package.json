@@ -1,19 +1,20 @@
 {
   "name": "uploadcare-redactor",
-  "version": "3.2.0",
+  "version": "3.1.0",
   "widgetVersion": "3.x",
-  "description": "File Uploader by Uploadcare. The plugin for Imperavi Redactor to work with Uploadcare Widget.",
+  "description": "Imperavi Redactor plugin for uploading files with Uploadcare Widget.",
   "main": "./src/uploadcare.js",
   "scripts": {
-    "dev": "rollup -c -w",
-    "start": "browser-sync start -s ./ -f ./ --port 3000",
-    "lint": "eslint .",
-    "precommit": "npm run lint",
-    "release": "release-it",
+    "dev": "vite build --watch",
+    "start": "vite --port 3000",
+    "lint": "oxlint",
+    "deploy": "npm run build && node scripts/deploy-release.js && node scripts/deploy-demo.js",
+    "predeploy:demo": "npm run build",
     "deploy:demo": "node scripts/deploy-demo.js",
+    "predeploy:release": "npm run build",
     "deploy:release": "node scripts/deploy-release.js",
-    "build": "npm run clean && rollup -c",
-    "clean": "rimraf dist"
+    "build": "vite build",
+    "test": "npm run build && vitest run"
   },
   "repository": {
     "type": "git",
@@ -26,17 +27,12 @@
   },
   "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "eslint": "^7.0.0",
-    "eslint-config-uploadcare": "^1.3.0",
-    "gh-pages": "^2.2.0",
-    "husky": "^4.2.5",
-    "release-it": "^13.6.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.10.2",
-    "rollup-plugin-browsersync": "^1.1.0",
-    "rollup-plugin-jscc": "^1.0.0",
-    "rollup-plugin-license": "^2.0.0",
-    "rollup-plugin-uglify": "^6.0.4"
+    "@vitest/browser-playwright": "^5.0.2",
+    "gh-pages": "^6.3.0",
+    "jquery": "^2.2.4",
+    "oxlint": "^1.86.0",
+    "playwright": "^1.63.0",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
   }
 }
