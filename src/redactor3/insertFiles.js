@@ -1,31 +1,35 @@
 import {escapeHtml} from '../common/escapeHtml'
 import {getFileUrl} from '../common/getFileUrl'
 
-// images go in one call: each separate insert replaces the image selected by
-// the one before it
+// Each separate image insert replaces the image the one before it left
+// selected, so files that include images go in as one block of HTML, which
+// also keeps the upload order. Links alone use the link insert, which puts
+// them inside the current paragraph.
 export function insertFiles(plugin, fileInfos) {
-  var images = {}
+  var hasImages = fileInfos.some(function(fileInfo) {
+    return fileInfo.isImage
+  })
 
-  fileInfos.forEach(function(fileInfo) {
-    var fileUrl = getFileUrl(fileInfo)
-
-    if (fileInfo.isImage) {
-      images[fileInfo.uuid] = {
-        url: fileUrl,
-        alt: escapeHtml(fileInfo.name),
-        id: fileInfo.uuid,
-      }
-    }
-    else {
+  if (!hasImages) {
+    fileInfos.forEach(function(fileInfo) {
       plugin.app.api('module.link.insert', {
-        url: fileUrl,
+        url: getFileUrl(fileInfo),
         text: escapeHtml(fileInfo.name),
         id: fileInfo.uuid,
       })
-    }
+    })
+
+    return
+  }
+
+  var html = fileInfos.map(function(fileInfo) {
+    var fileUrl = getFileUrl(fileInfo)
+    var name = escapeHtml(fileInfo.name)
+
+    return fileInfo.isImage
+      ? '<figure><img src="' + fileUrl + '" alt="' + name + '" data-image="' + fileInfo.uuid + '"></figure>'
+      : '<p><a href="' + fileUrl + '" data-file="' + fileInfo.uuid + '">' + name + '</a></p>'
   })
 
-  if (Object.keys(images).length) {
-    plugin.app.api('module.image.insert', images)
-  }
+  plugin.app.insertion.insertHtml(html.join(''))
 }

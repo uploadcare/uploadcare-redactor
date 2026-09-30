@@ -230,6 +230,10 @@ export function defineSuite(adapter) {
 
         expect(files).toHaveLength(2)
         await waitFor(() => adapter.content(editor.box).querySelectorAll('img').length === 2, 5_000)
+
+        const alts = [...adapter.content(editor.box).querySelectorAll('img')].map(image => image.getAttribute('alt'))
+
+        expect(alts).toEqual(['one.png', 'two.png'])
       })
 
       test('keeps markup in file names as text', async () => {
