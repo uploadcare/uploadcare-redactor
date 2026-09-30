@@ -14,6 +14,7 @@
     "predeploy:release": "npm run build",
     "deploy:release": "node scripts/deploy-release.js",
     "build": "vite build",
+    "test": "npm run build && vitest run",
     "precommit": "npm run lint",
     "release": "release-it"
   },
@@ -28,11 +29,15 @@
   },
   "homepage": "https://github.com/uploadcare/uploadcare-redactor#readme",
   "devDependencies": {
+    "@vitest/browser-playwright": "^5.0.2",
     "browser-sync": "^2.26.7",
     "gh-pages": "^6.3.0",
     "husky": "^4.2.5",
+    "jquery": "^2.2.4",
     "oxlint": "^1.86.0",
+    "playwright": "^1.63.0",
     "release-it": "^13.6.0",
-    "vite": "^8.3.1"
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
   }
 }

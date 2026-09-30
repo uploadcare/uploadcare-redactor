@@ -101,7 +101,8 @@
     {
       "files": [
         "scripts/**",
-        "vite.config.mjs"
+        "vite.config.mjs",
+        "vitest.config.mjs"
       ],
       "env": {
         "node": true,
@@ -109,6 +110,26 @@
       },
       "rules": {
         "no-console": "off"
+      }
+    },
+    {
+      "files": [
+        "test/**"
+      ],
+      "globals": {
+        "__REDACTOR5_BUILD__": "readonly",
+        "__UPLOADCARE_PUBLIC_KEY__": "readonly"
+      },
+      "rules": {
+        "new-cap": [
+          "error",
+          {
+            "capIsNewExceptions": [
+              "Redactor",
+              "RedactorX"
+            ]
+          }
+        ]
       }
     }
   ]
