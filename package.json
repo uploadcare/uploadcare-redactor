@@ -5,7 +5,7 @@
   "description": "File Uploader by Uploadcare. The plugin for Imperavi Redactor to work with Uploadcare Widget.",
   "main": "./src/uploadcare.js",
   "scripts": {
-    "dev": "rollup -c -w",
+    "dev": "vite build --watch",
     "start": "browser-sync start -s ./ -f ./ --port 3000",
     "lint": "eslint .",
     "deploy": "npm run build && node scripts/deploy-release.js && node scripts/deploy-demo.js",
@@ -13,10 +13,9 @@
     "deploy:demo": "node scripts/deploy-demo.js",
     "predeploy:release": "npm run build",
     "deploy:release": "node scripts/deploy-release.js",
-    "build": "npm run clean && rollup -c",
+    "build": "vite build",
     "precommit": "npm run lint",
-    "release": "release-it",
-    "clean": "rimraf dist"
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -35,11 +34,6 @@
     "gh-pages": "^6.3.0",
     "husky": "^4.2.5",
     "release-it": "^13.6.0",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.10.2",
-    "rollup-plugin-browsersync": "^1.1.0",
-    "rollup-plugin-jscc": "^1.0.0",
-    "rollup-plugin-license": "^2.0.0",
-    "rollup-plugin-uglify": "^6.0.4"
+    "vite": "^8.3.1"
   }
 }
