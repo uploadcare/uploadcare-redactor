@@ -9,9 +9,9 @@
   --color-line: #dfe3ea;
   --color-mist: #f3f5f8;
   --color-paper: #fff;
-  --color-blue: #238de6;
-  --color-dark-blue: #187cce;
-  --focus-ring: 0 0 0 3px rgba(35, 141, 230, 0.35);
+  --color-blue: #1b6fbf;
+  --color-dark-blue: #155a9c;
+  --focus-ring: 0 0 0 3px rgba(27, 111, 191, 0.35);
 }
 
 *,
