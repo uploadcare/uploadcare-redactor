@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uploadcare for Redactor X</title>
+  <link rel="stylesheet" href="../assets/fonts.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="redactorx.min.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1 class="title">Uploadcare for Redactor X</h1>
+      <p class="lead">
+        Upload images and files into Redactor with the Uploadcare Widget.
+        Try it below, then copy the code.
+      </p>
+      <nav aria-label="Redactor version">
+        <ul class="versions">
+          <li><a href="../redactorX/" aria-current="page">Redactor X</a></li>
+          <li><a href="../redactor3/">Redactor 3</a></li>
+          <li><a href="../redactor2/">Redactor 2</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section" aria-labelledby="demo-title">
+      <h2 class="section-title" id="demo-title">Demo</h2>
+      <p class="hint">
+        The Uploadcare button appears on the toolbar once you click into the text: Redactor&nbsp;X shows plugin buttons only while a block is selected.
+      </p>
+
+      <textarea id="editor">
+        <h2>Try the uploader</h2>
+        <p>Put the cursor where the file should go, then press the Uploadcare button on the toolbar.</p>
+        <p>Images are inserted into the text; other files are inserted as links.</p>
+      </textarea>
+    </section>
+
+    <section class="section" aria-labelledby="code-title">
+      <h2 class="section-title" id="code-title">Code</h2>
+      <pre><code>&lt;!-- jQuery is required by the plugin --&gt;
+&lt;script src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+&lt;script src="redactorx.min.js"&gt;&lt;/script&gt;
+&lt;script src="uploadcare.redactor.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  RedactorX('#editor', {
+    plugins: ['uploadcare'],
+    subscribe: {
+      uploadcareShow: function(event) { console.log(event.params) },
+      uploadcareDone: function(event) { console.log(event.params) },
+      uploadcareCancel: function(event) { console.log(event.params) },
+    },
+    uploadcare: {
+      publicKey: 'demopublickey',
+      crop: 'free,1:1',
+    },
+  })
+&lt;/script&gt;</code></pre>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://github.com/uploadcare/uploadcare-redactor#readme">Plugin docs</a>
+        <a href="https://github.com/uploadcare/uploadcare-redactor">GitHub</a>
+        <a href="https://github.com/uploadcare/uploadcare-redactor/releases">Releases</a>
+      </div>
+      <p>Powered by <a href="https://uploadcare.com/?utm_source=github&amp;utm_campaign=uploadcare-redactor&amp;utm_content=demo">Uploadcare</a></p>
+    </footer>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="redactorx.js"></script>
+  <script src="../../dist/uploadcare.redactor.min.js"></script>
+  <script>
+    RedactorX('#editor', {
+      plugins: ['uploadcare'],
+      subscribe: {
+        uploadcareShow: function(event) { console.log(event.params) },
+        uploadcareDone: function(event) { console.log(event.params) },
+        uploadcareCancel: function(event) { console.log(event.params) },
+      },
+      uploadcare: {
+        publicKey: 'demopublickey',
+        crop: 'free,1:1',
+      },
+    })
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25057731-12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag() { dataLayer.push(arguments) }
+
+    gtag('js', new Date())
+    gtag('config', 'UA-25057731-12')
+  </script>
+</body>
+</html>

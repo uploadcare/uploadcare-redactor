@@ -2,50 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Demo of File Uploader by Uploadcare, Redactor 2 Plugin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="../assets/app.css"/>
-  <link rel="stylesheet" href="../assets/fonts.css"/>
-
-  <link rel="stylesheet" href="redactor.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uploadcare for Redactor 2</title>
+  <link rel="stylesheet" href="../assets/fonts.css">
+  <link rel="stylesheet" href="../assets/app.css">
+  <link rel="stylesheet" href="redactor.min.css">
 </head>
-
 <body>
-<div class="content">
-  <h1>Demo&nbsp;with<br>File Uploader by Uploadcare, Redactor 2 plugin</h1>
+  <main class="page">
+    <header>
+      <h1 class="title">Uploadcare for Redactor 2</h1>
+      <p class="lead">
+        Upload images and files into Redactor with the Uploadcare Widget.
+        Try it below, then copy the code.
+      </p>
+      <nav aria-label="Redactor version">
+        <ul class="versions">
+          <li><a href="../redactorX/">Redactor X</a></li>
+          <li><a href="../redactor3/">Redactor 3</a></li>
+          <li><a href="../redactor2/" aria-current="page">Redactor 2</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <p>
-    <a href="https://github.com/uploadcare/uploadcare-redactor#readme">About plugin</a>&nbsp;&nbsp;
-    <a href="https://github.com/uploadcare/uploadcare-redactor">Github repo</a>&nbsp;&nbsp;
-    <a href="https://github.com/uploadcare/uploadcare-redactor/releases">Releases</a>&nbsp;&nbsp;
-    <a href="../redactor3/">Demo with Redactor 3</a>
-  </p>
+    <section class="section" aria-labelledby="demo-title">
+      <h2 class="section-title" id="demo-title">Demo</h2>
 
-  <h2>Demo</h2>
+      <textarea id="editor">
+        <h2>Try the uploader</h2>
+        <p>Put the cursor where the file should go, then press the Uploadcare button on the toolbar.</p>
+        <p>Images are inserted into the text; other files are inserted as links.</p>
+      </textarea>
+    </section>
 
-  <div style="margin: auto; padding-bottom: 50px;">
-    <textarea id="editor">
-      <h2>Hello and Welcome</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </textarea>
-  </div>
+    <section class="section" aria-labelledby="code-title">
+      <h2 class="section-title" id="code-title">Code</h2>
+      <pre><code>&lt;!-- jQuery is required by the plugin --&gt;
+&lt;script src="https://code.jquery.com/jquery-2.2.4.min.js"&gt;&lt;/script&gt;
+&lt;script src="redactor.min.js"&gt;&lt;/script&gt;
+&lt;script src="uploadcare.redactor.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $('#editor').redactor({
+    plugins: ['uploadcare'],
+    callbacks: {
+      uploadcareShow: function() { console.log.apply(undefined, arguments) },
+      uploadcareDone: function() { console.log.apply(undefined, arguments) },
+      uploadcareCancel: function() { console.log.apply(undefined, arguments) },
+    },
+    uploadcare: {
+      publicKey: 'demopublickey',
+      crop: 'free,1:1',
+      buttonIconEnabled: true,
+    },
+  })
+&lt;/script&gt;</code></pre>
+    </section>
 
-  <h2>Code</h2>
-
-  <pre><code>$('#editor').redactor({
-  plugins: ['uploadcare'],
-  callbacks: {
-    uploadcareShow: function() { console.log.apply(undefined, arguments) },
-    uploadcareDone: function() { console.log.apply(undefined, arguments) },
-    uploadcareCancel: function() { console.log.apply(undefined, arguments) },
-  },
-  uploadcare: {
-    publicKey: 'demopublickey',
-    crop: 'free,1:1',
-    buttonIconEnabled: true,
-  }
-});</code></pre>
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://github.com/uploadcare/uploadcare-redactor#readme">Plugin docs</a>
+        <a href="https://github.com/uploadcare/uploadcare-redactor">GitHub</a>
+        <a href="https://github.com/uploadcare/uploadcare-redactor/releases">Releases</a>
+      </div>
+      <p>Powered by <a href="https://uploadcare.com/?utm_source=github&amp;utm_campaign=uploadcare-redactor&amp;utm_content=demo">Uploadcare</a></p>
+    </footer>
+  </main>
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="redactor.min.js"></script>
@@ -62,25 +83,19 @@
         publicKey: 'demopublickey',
         crop: 'free,1:1',
         buttonIconEnabled: true,
-      }
+      },
     })
   </script>
 
-  <p style="text-align: center">
-    Powered by
-    <a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-ckeditor&utm_content=demo">Uploadcare</a>
-  </p>
-</div>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-25057731-12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-25057731-12"></script>
-<script>
-  window.dataLayer = (window.dataLayer || [])
+    function gtag() { dataLayer.push(arguments) }
 
-  function gtag() { dataLayer.push(arguments) }
-
-  gtag('js', new Date())
-  gtag('config', 'UA-25057731-12')
-</script>
+    gtag('js', new Date())
+    gtag('config', 'UA-25057731-12')
+  </script>
 </body>
 </html>

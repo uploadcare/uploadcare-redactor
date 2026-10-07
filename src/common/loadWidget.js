@@ -1,6 +1,6 @@
-import $ from 'jQuery'
+import {$} from '../globals'
 
-export default function loadWidget() {
+export function loadWidget() {
   if (typeof window.uploadcare === 'undefined') {
     var widgetUrl = 'https://ucarecdn.com/libs/widget/' + this.ucOpts.version + '/uploadcare.min.js'
 

@@ -1,7 +1,7 @@
-import $ from 'jQuery'
+import {$} from '../globals'
 
-export default function getVersion() {
-  if (typeof $.Redactor !== 'undefined') {
+export function getVersion() {
+  if (typeof $ !== 'undefined' && typeof $.Redactor !== 'undefined') {
     return $.Redactor.VERSION
   }
 }

@@ -1,4 +1,4 @@
-import $ from 'jQuery'
+import {$} from '../globals'
 
 function wrap(fn) {
   return function() {
@@ -6,7 +6,7 @@ function wrap(fn) {
   }
 }
 
-export default function addPlugin(pluginBody) {
+export function addPlugin(pluginBody) {
   $.Redactor.prototype.uploadcare = function() {
     return Object.keys(pluginBody).reduce(function(acc, key) {
       var value = pluginBody[key]

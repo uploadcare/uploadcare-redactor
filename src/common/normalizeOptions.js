@@ -1,6 +1,6 @@
-import $ from 'jQuery'
+import {$} from '../globals'
 
-export default function normalizeOptions() {
+export function normalizeOptions() {
   this.ucOpts = $.extend({}, this.redactorOpts.uploadcare)
 
   // defaults

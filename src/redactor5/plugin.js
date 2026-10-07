@@ -1,13 +1,13 @@
-import $R from 'Redactor'
-import getFileUrl from '../common/getFileUrl'
-import loadWidget from './loadWidget'
+import {$R} from '../globals'
+import {getFileUrl} from '../common/getFileUrl'
+import {loadWidget} from './loadWidget'
 
 var ICON = '<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
   '<path fill-rule="evenodd" clip-rule="evenodd" d="M11.3 3.3a1 1 0 0 1 1.4 0l5 5a1 1 0 0 1-1.4 1.4L13 6.4V16a1 1 0 1 1-2 0V6.4L7.7 9.7a1 1 0 0 1-1.4-1.4l5-5zM4 16a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a1 1 0 1 1 2 0v2a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2a1 1 0 0 1 1-1z"/>' +
   '</svg>'
 
 // 1. Redactor 5 calls this once per editor, passing the `uploadcare: {...}` options
-function UploadcarePlugin(app, options) {
+export function UploadcarePlugin(app, options) {
   this.app = app
   this.ucOpts = Object.assign({}, options)
 
@@ -56,7 +56,10 @@ UploadcarePlugin.prototype.show = function() {
   var saved = selection.saveSelection()
   var dialog = window.uploadcare.openDialog(null, this.ucOpts)
 
-  this.app.emit('uploadcare:show', {dialog: dialog, options: this.ucOpts})
+  this.app.emit('uploadcare:show', {
+    dialog: dialog,
+    options: this.ucOpts,
+  })
 
   dialog.fail(function() {
     selection.restoreSelection(saved)
@@ -88,7 +91,10 @@ UploadcarePlugin.prototype.insert = function(fileInfo) {
   var fileUrl = getFileUrl(fileInfo)
 
   if (fileInfo.isImage) {
-    this.app.image.insert({src: fileUrl, alt: fileInfo.name}, 'upload')
+    this.app.image.insert({
+      src: fileUrl,
+      alt: fileInfo.name,
+    }, 'upload')
   }
   else {
     // building the link with the DOM so a file name cannot inject markup
@@ -109,4 +115,3 @@ function toPromise(file) {
   })
 }
 
-export default UploadcarePlugin

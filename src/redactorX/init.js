@@ -1,8 +1,8 @@
-import loadWidget from '../common/loadWidget'
-import normalizeOptions from '../common/normalizeOptions'
-import applyIntegrationOption from '../common/applyIntegrationOption'
+import {loadWidget} from '../common/loadWidget'
+import {normalizeOptions} from '../common/normalizeOptions'
+import {applyIntegrationOption} from '../common/applyIntegrationOption'
 
-export default function() {
+export function init() {
   this.redactorOpts = this.app.opts
 
   normalizeOptions.call(this)
